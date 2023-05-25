@@ -59,7 +59,25 @@ Siga os passos abaixo para instalar e configurar o projeto em sua máquina local
     `HOST:PORT` : IP e porta de acesso configuradas no MySQL.
     
     `DATABASE_NAME` : nome do banco que deseja criar.
+
+
+2. **Criar banco de dados com o Prisma**:
+
+    Após a configuração do `.env`, é necessário criar o banco de dados usando o seguinte comando:
+
+    ```bash
+    npx prisma migrate dev
+    ```
     
+    Este comando irá criar a base de dados e executar o arquivo `seed.ts` para popular o banco com os dados de usuários.
+
+3. **Visualizar o banco de dados com o Prisma**:
+
+    Após a criação do banco de dados, é possível visualizar os dados e tabelas a partir do seguinte comando:
+
+    ```bash
+    npx prisma migrate dev
+    ```
 
 ## Execução
 
