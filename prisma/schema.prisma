@@ -11,11 +11,218 @@ datasource db {
 }
 
 model User {
-  id       String @id @default(uuid())
-  name     String
-  email    String @unique
-  password String
-  salt     String
+  id         String   @id @default(uuid())
+  name       String
+  email      String   @unique
+  password   String
+  salt       String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  role_id String
+  role    Role   @relation(fields: [role_id], references: [id])
+
+  packages_accommodations Order[]
 
   @@map("users")
+}
+
+model Role {
+  id         String   @id @default(uuid())
+  name       String   @unique
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  user User[]
+
+  permissions RolePermission[]
+
+  @@map("roles")
+}
+
+model Permission {
+  id         String   @id @default(uuid())
+  name       String   @unique
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  roles RolePermission[]
+
+  @@map("permissions")
+}
+
+model RolePermission {
+  id            String @id @default(uuid())
+  role_id       String
+  permission_id String
+
+  role       Role       @relation(fields: [role_id], references: [id])
+  permission Permission @relation(fields: [permission_id], references: [id])
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@unique([role_id, permission_id])
+  @@map("roles_permissions")
+}
+
+model Itinerary {
+  id               String  @id @default(uuid())
+  is_active        Boolean
+  name             String
+  number_of_days   Int
+  description      String
+  value_per_person Decimal
+  content          Json
+  classification   Json
+
+  category_id String
+  category    Category @relation(fields: [category_id], references: [id])
+
+  transfer_id String
+  transfer    Transfer @relation(fields: [transfer_id], references: [id])
+
+  accommodation Package[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("itineraries")
+}
+
+model Category {
+  id   String @id @default(uuid())
+  name String @unique
+
+  itinerary Itinerary[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("categories")
+}
+
+model Transfer {
+  id   String @id @default(uuid())
+  name String @unique
+
+  itinerary Itinerary[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("transfers")
+}
+
+model Accommodation {
+  id             String  @id @default(uuid())
+  is_active      Boolean
+  name           String
+  daily_value    Decimal
+  image_path     String
+  zip_code       String
+  address_name   String
+  district_name  String
+  address_number String
+  city           String
+
+  roomType_id String
+  roomType    RoomType @relation(fields: [roomType_id], references: [id])
+
+  mealType_id String
+  mealType    MealType @relation(fields: [mealType_id], references: [id])
+
+  package Package[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("accommodations")
+}
+
+model RoomType {
+  id   String @id @default(uuid())
+  name String @unique
+
+  accommodation Accommodation[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("rooms_types")
+}
+
+model MealType {
+  id   String @id @default(uuid())
+  name String @unique
+
+  accommodation Accommodation[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("meals_types")
+}
+
+model Package {
+  id String @id @default(uuid())
+
+  itinerary_id     String
+  accommodation_id String
+
+  itinerary     Itinerary     @relation(fields: [itinerary_id], references: [id])
+  accommodation Accommodation @relation(fields: [accommodation_id], references: [id])
+
+  users Order[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@unique([itinerary_id, accommodation_id])
+  @@map("packages")
+}
+
+model Member {
+  id       String @id @default(uuid())
+  name     String
+  document String
+  age      String
+
+  order MemberPerOrder[]
+
+  @@map("members")
+}
+
+model Order {
+  id String @id @default(uuid())
+
+  user_id    String
+  package_id String
+
+  user    User    @relation(fields: [user_id], references: [id])
+  package Package @relation(fields: [package_id], references: [id])
+
+  member MemberPerOrder[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@unique([user_id, package_id])
+  @@map("orders")
+}
+
+model MemberPerOrder {
+  id String @id @default(uuid())
+
+  member_id String
+  order_id  String
+
+  member Member @relation(fields: [member_id], references: [id])
+  order  Order  @relation(fields: [order_id], references: [id])
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@unique([member_id, order_id])
+  @@map("member_per_order")
 }
