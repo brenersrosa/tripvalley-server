@@ -12,13 +12,14 @@ export async function authRoutes(app: FastifyInstance) {
         email: z.string().email(),
         password: z.string(),
         passwordConfirmation: z.string({ required_error: 'Field is required' }),
+        role_id: z.string().uuid(),
       })
       .refine((data) => data.password === data.passwordConfirmation, {
         message: `Password confirmation doesn't match password`,
         path: ['passwordConfirmation'],
       })
 
-    const { name, email, password } = bodySchema.parse(request.body)
+    const { name, email, password, role_id } = bodySchema.parse(request.body)
 
     const { hash, salt } = hashPassword(password)
 
@@ -34,7 +35,7 @@ export async function authRoutes(app: FastifyInstance) {
       }
 
       user = await prisma.user.create({
-        data: { name, email, password: hash, salt },
+        data: { name, email, password: hash, salt, role_id },
       })
 
       return reply.status(201).send({ message: 'User created with success' })

@@ -12,10 +12,11 @@
   "license": "ISC",
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0",
-    "@types/node": "^20.1.5",
+    "@types/node": "^20.2.3",
     "dotenv": "^16.0.3",
     "eslint": "^8.40.0",
     "prisma": "^4.14.0",
+    "ts-node": "^10.9.1",
     "tsx": "^3.12.7",
     "typescript": "^5.0.4"
   },
@@ -26,5 +27,8 @@
     "axios": "^1.4.0",
     "fastify": "^4.17.0",
     "zod": "^3.21.4"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }
