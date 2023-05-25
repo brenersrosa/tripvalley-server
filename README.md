@@ -76,7 +76,7 @@ Siga os passos abaixo para instalar e configurar o projeto em sua máquina local
     Após a criação do banco de dados, é possível visualizar os dados e tabelas a partir do seguinte comando:
 
     ```bash
-    npx prisma migrate dev
+    npx prisma studio
     ```
 
 ## Execução
