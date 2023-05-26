@@ -7,7 +7,7 @@ const firstRolesName = 'administrator'
 const firstRolesCreatedDate = new Date()
 
 const secondRolesId = 'f2aabaf2-f039-11ed-a05b-0242ac120003'
-const secondRolesName = 'client'
+const secondRolesName = 'user'
 const secondRolesCreatedDate = new Date()
 
 const firstUsersId = 'f649b096-f039-11ed-a05b-0242ac120003'
@@ -90,32 +90,6 @@ async function run() {
   ])
 
   await Promise.all([
-    prisma.user.create({
-      data: {
-        id: firstUsersId,
-        name: firstUsersName,
-        email: firstUsersEmail,
-        password: firstUsersPassword,
-        salt: firstUsersSalt,
-        created_at: firstUsersCreatedDate,
-        role_id: firstUsersRoleId,
-      },
-    }),
-
-    prisma.user.create({
-      data: {
-        id: secondUsersId,
-        name: secondUsersName,
-        email: secondUsersEmail,
-        password: secondUsersPassword,
-        salt: secondUsersSalt,
-        created_at: secondUsersCreatedDate,
-        role_id: secondUsersRoleId,
-      },
-    }),
-  ])
-
-  await Promise.all([
     prisma.permission.create({
       data: {
         id: firstPermissionsId,
@@ -184,6 +158,32 @@ async function run() {
         created_at: fifthRolesPermissionsCreatedDate,
         role_id: fifthRolesPermissionsRoleId,
         permission_id: fifthRolesPermissionsPermissionId,
+      },
+    }),
+  ])
+
+  await Promise.all([
+    prisma.user.create({
+      data: {
+        id: firstUsersId,
+        name: firstUsersName,
+        email: firstUsersEmail,
+        password: firstUsersPassword,
+        salt: firstUsersSalt,
+        created_at: firstUsersCreatedDate,
+        role_id: firstUsersRoleId,
+      },
+    }),
+
+    prisma.user.create({
+      data: {
+        id: secondUsersId,
+        name: secondUsersName,
+        email: secondUsersEmail,
+        password: secondUsersPassword,
+        salt: secondUsersSalt,
+        created_at: secondUsersCreatedDate,
+        role_id: secondUsersRoleId,
       },
     }),
   ])

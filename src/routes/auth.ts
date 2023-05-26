@@ -1,5 +1,6 @@
 import { FastifyInstance } from 'fastify'
 import { z } from 'zod'
+
 import { hashPassword, verifyPassword } from '../lib/hashPassword'
 import { prisma } from '../lib/prisma'
 
@@ -12,7 +13,7 @@ export async function authRoutes(app: FastifyInstance) {
         email: z.string().email(),
         password: z.string(),
         passwordConfirmation: z.string({ required_error: 'Field is required' }),
-        role_id: z.string().uuid(),
+        role_id: z.string().uuid().optional(),
       })
       .refine((data) => data.password === data.passwordConfirmation, {
         message: `Password confirmation doesn't match password`,
@@ -34,9 +35,32 @@ export async function authRoutes(app: FastifyInstance) {
           .send({ message: 'User already registered with this email address' })
       }
 
-      user = await prisma.user.create({
-        data: { name, email, password: hash, salt, role_id },
-      })
+      if (!role_id) {
+        const role = await prisma.role.findUnique({
+          where: {
+            name: 'user',
+          },
+        })
+
+        user = await prisma.user.create({
+          data: {
+            name,
+            email,
+            password: hash,
+            salt,
+            role_id: role?.id || 'default',
+          },
+        })
+      } else
+        user = await prisma.user.create({
+          data: {
+            name,
+            email,
+            password: hash,
+            salt,
+            role_id,
+          },
+        })
 
       return reply.status(201).send({ message: 'User created with success' })
     } catch (error) {
@@ -91,7 +115,11 @@ export async function authRoutes(app: FastifyInstance) {
 
   // route get all users
   app.get('/users', async (request) => {
-    const users = await prisma.user.findMany()
+    const users = await prisma.user.findMany({
+      orderBy: {
+        created_at: 'desc',
+      },
+    })
 
     return users
   })

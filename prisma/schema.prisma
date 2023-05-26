@@ -67,22 +67,22 @@ model RolePermission {
 }
 
 model Itinerary {
-  id               String  @id @default(uuid())
-  is_active        Boolean
-  name             String
-  number_of_days   Int
-  description      String
-  value_per_person Decimal
-  content          Json
-  classification   Json
+  id                  String  @id @default(uuid())
+  is_active           Boolean
+  name                String
+  number_of_days      Int
+  description         String
+  value_per_person    Decimal
+  content             Json
+  classification      Json
+  transfer_particular Boolean
+  transfer_exclusive  Boolean
+  transfer_shared     Boolean
 
   category_id String
   category    Category @relation(fields: [category_id], references: [id])
 
-  transfer_id String
-  transfer    Transfer @relation(fields: [transfer_id], references: [id])
-
-  accommodation Package[]
+  packages ItinerariesOnPackages[]
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
@@ -102,18 +102,6 @@ model Category {
   @@map("categories")
 }
 
-model Transfer {
-  id   String @id @default(uuid())
-  name String @unique
-
-  itinerary Itinerary[]
-
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-
-  @@map("transfers")
-}
-
 model Accommodation {
   id             String  @id @default(uuid())
   is_active      Boolean
@@ -126,13 +114,10 @@ model Accommodation {
   address_number String
   city           String
 
-  roomType_id String
-  roomType    RoomType @relation(fields: [roomType_id], references: [id])
+  faciliti_id String
+  faciliti    Faciliti @relation(fields: [faciliti_id], references: [id])
 
-  mealType_id String
-  mealType    MealType @relation(fields: [mealType_id], references: [id])
-
-  package Package[]
+  packages AccommodationsOnPackages[]
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
@@ -140,46 +125,76 @@ model Accommodation {
   @@map("accommodations")
 }
 
-model RoomType {
-  id   String @id @default(uuid())
-  name String @unique
+model Faciliti {
+  id                  String  @id @default(uuid())
+  single_room         Boolean
+  double_room         Boolean
+  double_bedroom      Boolean
+  dorm_room           Boolean
+  breakfast           Boolean
+  lunch               Boolean
+  dinner              Boolean
+  wifi                Boolean
+  pet_friendly        Boolean
+  parking             Boolean
+  gyn                 Boolean
+  pool                Boolean
+  on_site_restaurants Boolean
+  nearby_restaurants  Boolean
+  room_service        Boolean
+  transport_service   Boolean
+  childrens_area      Boolean
 
-  accommodation Accommodation[]
+  accommodations Accommodation[]
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-
-  @@map("rooms_types")
-}
-
-model MealType {
-  id   String @id @default(uuid())
-  name String @unique
-
-  accommodation Accommodation[]
-
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-
-  @@map("meals_types")
+  @@map("facilities")
 }
 
 model Package {
-  id String @id @default(uuid())
+  id   String @id @default(uuid())
+  name String
 
-  itinerary_id     String
-  accommodation_id String
-
-  itinerary     Itinerary     @relation(fields: [itinerary_id], references: [id])
-  accommodation Accommodation @relation(fields: [accommodation_id], references: [id])
+  itineraries    ItinerariesOnPackages[]
+  accommodations AccommodationsOnPackages[]
 
   users Order[]
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
-  @@unique([itinerary_id, accommodation_id])
   @@map("packages")
+}
+
+model ItinerariesOnPackages {
+  id String @id @default(uuid())
+
+  itinerary_id String
+  package_id   String
+
+  itinerary Itinerary @relation(fields: [itinerary_id], references: [id])
+  package   Package   @relation(fields: [package_id], references: [id])
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@unique([itinerary_id, package_id])
+  @@map("itineraries_on_packages")
+}
+
+model AccommodationsOnPackages {
+  id String @id @default(uuid())
+
+  accommodation_id String
+  package_id       String
+
+  accommodation Accommodation @relation(fields: [accommodation_id], references: [id])
+  package       Package       @relation(fields: [package_id], references: [id])
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@unique([accommodation_id, package_id])
+  @@map("accommodations_on_packages")
 }
 
 model Member {
@@ -194,7 +209,8 @@ model Member {
 }
 
 model Order {
-  id String @id @default(uuid())
+  id          String  @id @default(uuid())
+  total_value Decimal
 
   user_id    String
   package_id String
