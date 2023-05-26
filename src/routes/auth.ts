@@ -48,7 +48,7 @@ export async function authRoutes(app: FastifyInstance) {
             email,
             password: hash,
             salt,
-            role_id: role?.id || 'default',
+            role_id: role?.id || '',
           },
         })
       } else

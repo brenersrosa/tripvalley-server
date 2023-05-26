@@ -147,6 +147,9 @@ model Faciliti {
 
   accommodations Accommodation[]
 
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
   @@map("facilities")
 }
 
@@ -157,7 +160,7 @@ model Package {
   itineraries    ItinerariesOnPackages[]
   accommodations AccommodationsOnPackages[]
 
-  users Order[]
+  orders Order[]
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
