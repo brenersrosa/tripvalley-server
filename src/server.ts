@@ -3,6 +3,7 @@ import jwt from '@fastify/jwt'
 import 'dotenv/config'
 import fastify from 'fastify'
 
+import { accommodationRoutes } from './routes/accommodation'
 import { authRoutes } from './routes/auth'
 import { itineraryRoutes } from './routes/itinerary'
 
@@ -18,6 +19,7 @@ app.register(jwt, {
 
 app.register(authRoutes)
 app.register(itineraryRoutes)
+app.register(accommodationRoutes)
 
 const port = Number(process.env.PORT)
 app
