@@ -13,14 +13,14 @@ export async function authRoutes(app: FastifyInstance) {
         email: z.string().email(),
         password: z.string(),
         passwordConfirmation: z.string({ required_error: 'Field is required' }),
-        role_id: z.string().uuid().optional(),
+        roleId: z.string().uuid().optional(),
       })
       .refine((data) => data.password === data.passwordConfirmation, {
         message: `Password confirmation doesn't match password`,
         path: ['passwordConfirmation'],
       })
 
-    const { name, email, password, role_id } = bodySchema.parse(request.body)
+    const { name, email, password, roleId } = bodySchema.parse(request.body)
 
     const { hash, salt } = hashPassword(password)
 
@@ -35,7 +35,7 @@ export async function authRoutes(app: FastifyInstance) {
           .send({ message: 'User already registered with this email address' })
       }
 
-      if (!role_id) {
+      if (!roleId) {
         const role = await prisma.role.findUnique({
           where: {
             name: 'user',
@@ -48,7 +48,7 @@ export async function authRoutes(app: FastifyInstance) {
             email,
             password: hash,
             salt,
-            role_id: role?.id || '',
+            roleId: role?.id || '',
           },
         })
       } else
@@ -58,7 +58,7 @@ export async function authRoutes(app: FastifyInstance) {
             email,
             password: hash,
             salt,
-            role_id,
+            roleId,
           },
         })
 
@@ -85,7 +85,7 @@ export async function authRoutes(app: FastifyInstance) {
 
     if (!user) {
       return reply.status(400).send({
-        message: 'User not registered with this email',
+        message: 'E-mail ou senha inválidos.',
       })
     }
 
@@ -117,7 +117,7 @@ export async function authRoutes(app: FastifyInstance) {
   app.get('/users', async (request) => {
     const users = await prisma.user.findMany({
       orderBy: {
-        created_at: 'desc',
+        createdAt: 'desc',
       },
     })
 

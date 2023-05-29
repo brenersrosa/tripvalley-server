@@ -125,77 +125,6 @@ const thirdItineraryTransferExclusive = true
 const thirdItineraryTransferParticular = true
 const thirdItineraryTransferShared = true
 
-// packages
-const firstPackageId = randomUUID()
-const firstPackageName = 'Pacote 1'
-
-const secondPackageId = randomUUID()
-const secondPackageName = 'Pacote 2'
-
-// itineraries_on_packages
-const firstItinerariesOnPackages = randomUUID()
-const secondItinerariesOnPackages = randomUUID()
-const thirdItinerariesOnPackages = randomUUID()
-const fourthItinerariesOnPackages = randomUUID()
-
-// facilities
-const firstFacilityId = randomUUID()
-const firstFacilitySingleRoom = true
-const firstFacilityDoubleRoom = true
-const firstFacilityDoubleBedroom = true
-const firstFacilityDormRoom = true
-const firstFacilityBreakfast = true
-const firstFacilityLunch = true
-const firstFacilityDinner = true
-const firstFacilityWifi = true
-const firstFacilityPetFriendly = true
-const firstFacilityParking = true
-const firstFacilityGyn = true
-const firstFacilityPool = true
-const firstFacilityOnSiteRestaurants = true
-const firstFacilityNearbyRestaurants = true
-const firstFacilityRoomService = true
-const firstFacilityTransportService = true
-const firstFacilityChildrensArea = true
-
-const secondFacilityId = randomUUID()
-const secondFacilitySingleRoom = true
-const secondFacilityDoubleRoom = true
-const secondFacilityDoubleBedroom = true
-const secondFacilityDormRoom = true
-const secondFacilityBreakfast = true
-const secondFacilityLunch = false
-const secondFacilityDinner = false
-const secondFacilityWifi = true
-const secondFacilityPetFriendly = false
-const secondFacilityParking = false
-const secondFacilityGyn = false
-const secondFacilityPool = false
-const secondFacilityOnSiteRestaurants = false
-const secondFacilityNearbyRestaurants = false
-const secondFacilityRoomService = false
-const secondFacilityTransportService = false
-const secondFacilityChildrensArea = false
-
-const thirdFacilityId = randomUUID()
-const thirdFacilitySingleRoom = true
-const thirdFacilityDoubleRoom = true
-const thirdFacilityDoubleBedroom = true
-const thirdFacilityDormRoom = false
-const thirdFacilityBreakfast = false
-const thirdFacilityLunch = false
-const thirdFacilityDinner = false
-const thirdFacilityWifi = true
-const thirdFacilityPetFriendly = false
-const thirdFacilityParking = false
-const thirdFacilityGyn = false
-const thirdFacilityPool = false
-const thirdFacilityOnSiteRestaurants = false
-const thirdFacilityNearbyRestaurants = false
-const thirdFacilityRoomService = false
-const thirdFacilityTransportService = false
-const thirdFacilityChildrensArea = false
-
 // accommodations
 const firstAccommodationsId = randomUUID()
 const firstAccommodationsStatus = true
@@ -208,6 +137,23 @@ const firstAccommodationsAddressName = 'Rua 1'
 const firstAccommodationsDistrictName = 'Bairro A'
 const firstAccommodationsAddressNumber = '100'
 const firstAccommodationsCity = 'Cidade X'
+const firstAccommodationsSingleRoom = true
+const firstAccommodationsDoubleRoom = true
+const firstAccommodationsDoubleBedroom = true
+const firstAccommodationsDormRoom = true
+const firstAccommodationsBreakfast = true
+const firstAccommodationsLunch = true
+const firstAccommodationsDinner = true
+const firstAccommodationsWifi = true
+const firstAccommodationsPetFriendly = true
+const firstAccommodationsParking = true
+const firstAccommodationsGyn = true
+const firstAccommodationsPool = true
+const firstAccommodationsOnSiteRestaurants = true
+const firstAccommodationsNearbyRestaurants = true
+const firstAccommodationsRoomService = true
+const firstAccommodationsTransportService = true
+const firstAccommodationsChildrensArea = true
 
 const secondAccommodationsId = randomUUID()
 const secondAccommodationsStatus = true
@@ -220,6 +166,23 @@ const secondAccommodationsAddressName = 'Rua 2'
 const secondAccommodationsDistrictName = 'Bairro B'
 const secondAccommodationsAddressNumber = '300'
 const secondAccommodationsCity = 'Cidade Y'
+const secondAccommodationsSingleRoom = true
+const secondAccommodationsDoubleRoom = true
+const secondAccommodationsDoubleBedroom = true
+const secondAccommodationsDormRoom = true
+const secondAccommodationsBreakfast = true
+const secondAccommodationsLunch = false
+const secondAccommodationsDinner = false
+const secondAccommodationsWifi = true
+const secondAccommodationsPetFriendly = false
+const secondAccommodationsParking = false
+const secondAccommodationsGyn = false
+const secondAccommodationsPool = false
+const secondAccommodationsOnSiteRestaurants = false
+const secondAccommodationsNearbyRestaurants = false
+const secondAccommodationsRoomService = false
+const secondAccommodationsTransportService = false
+const secondAccommodationsChildrensArea = false
 
 const thirdAccommodationsId = randomUUID()
 const thirdAccommodationsStatus = true
@@ -232,8 +195,38 @@ const thirdAccommodationsAddressName = 'Rua 3'
 const thirdAccommodationsDistrictName = 'Bairro C'
 const thirdAccommodationsAddressNumber = '700'
 const thirdAccommodationsCity = 'Cidade Z'
+const thirdAccommodationsSingleRoom = true
+const thirdAccommodationsDoubleRoom = true
+const thirdAccommodationsDoubleBedroom = true
+const thirdAccommodationsDormRoom = false
+const thirdAccommodationsBreakfast = false
+const thirdAccommodationsLunch = false
+const thirdAccommodationsDinner = false
+const thirdAccommodationsWifi = true
+const thirdAccommodationsPetFriendly = false
+const thirdAccommodationsParking = false
+const thirdAccommodationsGyn = false
+const thirdAccommodationsPool = false
+const thirdAccommodationsOnSiteRestaurants = false
+const thirdAccommodationsNearbyRestaurants = false
+const thirdAccommodationsRoomService = false
+const thirdAccommodationsTransportService = false
+const thirdAccommodationsChildrensArea = false
 
-// accommodations_on_packages
+// packages
+const firstPackageId = randomUUID()
+const firstPackageName = 'Pacote 1'
+
+const secondPackageId = randomUUID()
+const secondPackageName = 'Pacote 2'
+
+// itinerariesOnPackages
+const firstItinerariesOnPackages = randomUUID()
+const secondItinerariesOnPackages = randomUUID()
+const thirdItinerariesOnPackages = randomUUID()
+const fourthItinerariesOnPackages = randomUUID()
+
+// accommodationsOnPackages
 const firstAccommodationsOnPackages = randomUUID()
 const secondAccommodationsOnPackages = randomUUID()
 const thirdAccommodationsOnPackages = randomUUID()
@@ -244,13 +237,12 @@ async function run() {
   await prisma.rolePermission.deleteMany()
   await prisma.permission.deleteMany()
   await prisma.role.deleteMany()
-  await prisma.package.deleteMany()
   await prisma.itinerariesOnPackages.deleteMany()
   await prisma.itinerary.deleteMany()
   await prisma.category.deleteMany()
   await prisma.accommodationsOnPackages.deleteMany()
   await prisma.accommodation.deleteMany()
-  await prisma.faciliti.deleteMany()
+  await prisma.package.deleteMany()
 
   // roles
   await Promise.all([
@@ -258,7 +250,7 @@ async function run() {
       data: {
         id: firstRolesId,
         name: firstRolesName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
 
@@ -266,7 +258,7 @@ async function run() {
       data: {
         id: secondRolesId,
         name: secondRolesName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
   ])
@@ -277,7 +269,7 @@ async function run() {
       data: {
         id: firstPermissionsId,
         name: firstPermissionsName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
 
@@ -285,7 +277,7 @@ async function run() {
       data: {
         id: secondPermissionsId,
         name: secondPermissionsName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
 
@@ -293,7 +285,7 @@ async function run() {
       data: {
         id: thirdPermissionsId,
         name: thirdPermissionsName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
   ])
@@ -303,45 +295,45 @@ async function run() {
     prisma.rolePermission.create({
       data: {
         id: firstRolesPermissionsId,
-        role_id: firstRolesPermissionsRoleId,
-        permission_id: firstRolesPermissionsPermissionId,
-        created_at: new Date(),
+        roleId: firstRolesPermissionsRoleId,
+        permissionId: firstRolesPermissionsPermissionId,
+        createdAt: new Date(),
       },
     }),
 
     prisma.rolePermission.create({
       data: {
         id: secondRolesPermissionsId,
-        role_id: secondRolesPermissionsRoleId,
-        permission_id: secondRolesPermissionsPermissionId,
-        created_at: new Date(),
+        roleId: secondRolesPermissionsRoleId,
+        permissionId: secondRolesPermissionsPermissionId,
+        createdAt: new Date(),
       },
     }),
 
     prisma.rolePermission.create({
       data: {
         id: thirdRolesPermissionsId,
-        role_id: thirdRolesPermissionsRoleId,
-        permission_id: thirdRolesPermissionsPermissionId,
-        created_at: new Date(),
+        roleId: thirdRolesPermissionsRoleId,
+        permissionId: thirdRolesPermissionsPermissionId,
+        createdAt: new Date(),
       },
     }),
 
     prisma.rolePermission.create({
       data: {
         id: fourthRolesPermissionsId,
-        role_id: fourthRolesPermissionsRoleId,
-        permission_id: fourthRolesPermissionsPermissionId,
-        created_at: new Date(),
+        roleId: fourthRolesPermissionsRoleId,
+        permissionId: fourthRolesPermissionsPermissionId,
+        createdAt: new Date(),
       },
     }),
 
     prisma.rolePermission.create({
       data: {
         id: fifthRolesPermissionsId,
-        role_id: fifthRolesPermissionsRoleId,
-        permission_id: fifthRolesPermissionsPermissionId,
-        created_at: new Date(),
+        roleId: fifthRolesPermissionsRoleId,
+        permissionId: fifthRolesPermissionsPermissionId,
+        createdAt: new Date(),
       },
     }),
   ])
@@ -355,8 +347,8 @@ async function run() {
         email: firstUsersEmail,
         password: firstUsersPassword,
         salt: firstUsersSalt,
-        role_id: firstUsersRoleId,
-        created_at: new Date(),
+        roleId: firstUsersRoleId,
+        createdAt: new Date(),
       },
     }),
 
@@ -367,8 +359,8 @@ async function run() {
         email: secondUsersEmail,
         password: secondUsersPassword,
         salt: secondUsersSalt,
-        role_id: secondUsersRoleId,
-        created_at: new Date(),
+        roleId: secondUsersRoleId,
+        createdAt: new Date(),
       },
     }),
   ])
@@ -379,7 +371,7 @@ async function run() {
       data: {
         id: firstCategoryId,
         name: firstCategoryName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
 
@@ -387,7 +379,7 @@ async function run() {
       data: {
         id: secondCategoryId,
         name: secondCategoryName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
 
@@ -395,7 +387,7 @@ async function run() {
       data: {
         id: thirdCategoryId,
         name: thirdCategoryName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
 
@@ -403,7 +395,7 @@ async function run() {
       data: {
         id: fourthCategoryId,
         name: fourthCategoryName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
 
@@ -411,7 +403,7 @@ async function run() {
       data: {
         id: fifthCategoryId,
         name: fifthCategoryName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
   ])
@@ -421,54 +413,54 @@ async function run() {
     prisma.itinerary.create({
       data: {
         id: firstItineraryId,
-        is_active: firstItineraryStatus,
+        isActive: firstItineraryStatus,
         name: firstItineraryName,
-        number_of_days: firstItineraryNumberOfDays,
+        numberOfDays: firstItineraryNumberOfDays,
         description: firstItineraryDescription,
-        value_per_person: firstItineraryValuePerPerson,
+        valuePerPerson: firstItineraryValuePerPerson,
         content: firstItineraryContent,
         classification: firstItineraryClassification,
-        category_id: firstItineraryCategoryId,
-        transfer_exclusive: firstItineraryTransferExclusive,
-        transfer_particular: firstItineraryTransferParticular,
-        transfer_shared: firstItineraryTransferShared,
-        created_at: new Date(),
+        categoryId: firstItineraryCategoryId,
+        transferExclusive: firstItineraryTransferExclusive,
+        transferParticular: firstItineraryTransferParticular,
+        transferShared: firstItineraryTransferShared,
+        createdAt: new Date(),
       },
     }),
 
     prisma.itinerary.create({
       data: {
         id: secondItineraryId,
-        is_active: secondItineraryStatus,
+        isActive: secondItineraryStatus,
         name: secondItineraryName,
-        number_of_days: secondItineraryNumberOfDays,
+        numberOfDays: secondItineraryNumberOfDays,
         description: secondItineraryDescription,
-        value_per_person: secondItineraryValuePerPerson,
+        valuePerPerson: secondItineraryValuePerPerson,
         content: secondItineraryContent,
         classification: secondItineraryClassification,
-        category_id: secondItineraryCategoryId,
-        transfer_exclusive: secondItineraryTransferExclusive,
-        transfer_particular: secondItineraryTransferParticular,
-        transfer_shared: secondItineraryTransferShared,
-        created_at: new Date(),
+        categoryId: secondItineraryCategoryId,
+        transferExclusive: secondItineraryTransferExclusive,
+        transferParticular: secondItineraryTransferParticular,
+        transferShared: secondItineraryTransferShared,
+        createdAt: new Date(),
       },
     }),
 
     prisma.itinerary.create({
       data: {
         id: thirdItineraryId,
-        is_active: thirdItineraryStatus,
+        isActive: thirdItineraryStatus,
         name: thirdItineraryName,
-        number_of_days: thirdItineraryNumberOfDays,
+        numberOfDays: thirdItineraryNumberOfDays,
         description: thirdItineraryDescription,
-        value_per_person: thirdItineraryValuePerPerson,
+        valuePerPerson: thirdItineraryValuePerPerson,
         content: thirdItineraryContent,
         classification: thirdItineraryClassification,
-        category_id: thirdItineraryCategoryId,
-        transfer_exclusive: thirdItineraryTransferExclusive,
-        transfer_particular: thirdItineraryTransferParticular,
-        transfer_shared: thirdItineraryTransferShared,
-        created_at: new Date(),
+        categoryId: thirdItineraryCategoryId,
+        transferExclusive: thirdItineraryTransferExclusive,
+        transferParticular: thirdItineraryTransferParticular,
+        transferShared: thirdItineraryTransferShared,
+        createdAt: new Date(),
       },
     }),
   ])
@@ -479,7 +471,7 @@ async function run() {
       data: {
         id: firstPackageId,
         name: firstPackageName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
 
@@ -487,121 +479,46 @@ async function run() {
       data: {
         id: secondPackageId,
         name: secondPackageName,
-        created_at: new Date(),
+        createdAt: new Date(),
       },
     }),
   ])
 
-  // itineraries_on_packages
+  // itinerariesOnPackages
   await Promise.all([
     prisma.itinerariesOnPackages.create({
       data: {
         id: firstItinerariesOnPackages,
-        package_id: firstPackageId,
-        itinerary_id: firstItineraryId,
-        created_at: new Date(),
+        packageId: firstPackageId,
+        itineraryId: firstItineraryId,
+        createdAt: new Date(),
       },
     }),
 
     prisma.itinerariesOnPackages.create({
       data: {
         id: secondItinerariesOnPackages,
-        package_id: firstPackageId,
-        itinerary_id: secondItineraryId,
-        created_at: new Date(),
+        packageId: firstPackageId,
+        itineraryId: secondItineraryId,
+        createdAt: new Date(),
       },
     }),
 
     prisma.itinerariesOnPackages.create({
       data: {
         id: thirdItinerariesOnPackages,
-        package_id: secondPackageId,
-        itinerary_id: firstItineraryId,
-        created_at: new Date(),
+        packageId: secondPackageId,
+        itineraryId: firstItineraryId,
+        createdAt: new Date(),
       },
     }),
 
     prisma.itinerariesOnPackages.create({
       data: {
         id: fourthItinerariesOnPackages,
-        package_id: secondPackageId,
-        itinerary_id: thirdItineraryId,
-        created_at: new Date(),
-      },
-    }),
-  ])
-
-  // facilities
-  await Promise.all([
-    prisma.faciliti.create({
-      data: {
-        id: firstFacilityId,
-        single_room: firstFacilitySingleRoom,
-        double_room: firstFacilityDoubleRoom,
-        double_bedroom: firstFacilityDoubleBedroom,
-        dorm_room: firstFacilityDormRoom,
-        breakfast: firstFacilityBreakfast,
-        lunch: firstFacilityLunch,
-        dinner: firstFacilityDinner,
-        wifi: firstFacilityWifi,
-        pet_friendly: firstFacilityPetFriendly,
-        parking: firstFacilityParking,
-        gyn: firstFacilityGyn,
-        pool: firstFacilityPool,
-        on_site_restaurants: firstFacilityOnSiteRestaurants,
-        nearby_restaurants: firstFacilityNearbyRestaurants,
-        room_service: firstFacilityRoomService,
-        transport_service: firstFacilityTransportService,
-        childrens_area: firstFacilityChildrensArea,
-        created_at: new Date(),
-      },
-    }),
-
-    prisma.faciliti.create({
-      data: {
-        id: secondFacilityId,
-        single_room: secondFacilitySingleRoom,
-        double_room: secondFacilityDoubleRoom,
-        double_bedroom: secondFacilityDoubleBedroom,
-        dorm_room: secondFacilityDormRoom,
-        breakfast: secondFacilityBreakfast,
-        lunch: secondFacilityLunch,
-        dinner: secondFacilityDinner,
-        wifi: secondFacilityWifi,
-        pet_friendly: secondFacilityPetFriendly,
-        parking: secondFacilityParking,
-        gyn: secondFacilityGyn,
-        pool: secondFacilityPool,
-        on_site_restaurants: secondFacilityOnSiteRestaurants,
-        nearby_restaurants: secondFacilityNearbyRestaurants,
-        room_service: secondFacilityRoomService,
-        transport_service: secondFacilityTransportService,
-        childrens_area: secondFacilityChildrensArea,
-        created_at: new Date(),
-      },
-    }),
-
-    prisma.faciliti.create({
-      data: {
-        id: thirdFacilityId,
-        single_room: thirdFacilitySingleRoom,
-        double_room: thirdFacilityDoubleRoom,
-        double_bedroom: thirdFacilityDoubleBedroom,
-        dorm_room: thirdFacilityDormRoom,
-        breakfast: thirdFacilityBreakfast,
-        lunch: thirdFacilityLunch,
-        dinner: thirdFacilityDinner,
-        wifi: thirdFacilityWifi,
-        pet_friendly: thirdFacilityPetFriendly,
-        parking: thirdFacilityParking,
-        gyn: thirdFacilityGyn,
-        pool: thirdFacilityPool,
-        on_site_restaurants: thirdFacilityOnSiteRestaurants,
-        nearby_restaurants: thirdFacilityNearbyRestaurants,
-        room_service: thirdFacilityRoomService,
-        transport_service: thirdFacilityTransportService,
-        childrens_area: thirdFacilityChildrensArea,
-        created_at: new Date(),
+        packageId: secondPackageId,
+        itineraryId: thirdItineraryId,
+        createdAt: new Date(),
       },
     }),
   ])
@@ -611,90 +528,138 @@ async function run() {
     prisma.accommodation.create({
       data: {
         id: firstAccommodationsId,
-        is_active: firstAccommodationsStatus,
+        isActive: firstAccommodationsStatus,
         name: firstAccommodationsName,
-        daily_value: firstAccommodationsDailyValue,
-        image_path: firstAccommodationsImagePath,
-        zip_code: firstAccommodationsZipCode,
-        address_name: firstAccommodationsAddressName,
-        district_name: firstAccommodationsDistrictName,
-        address_number: firstAccommodationsAddressNumber,
+        dailyValue: firstAccommodationsDailyValue,
+        imagePath: firstAccommodationsImagePath,
+        zipCode: firstAccommodationsZipCode,
+        addressName: firstAccommodationsAddressName,
+        districtName: firstAccommodationsDistrictName,
+        addressNumber: firstAccommodationsAddressNumber,
         city: firstAccommodationsCity,
-        faciliti_id: firstFacilityId,
-        created_at: new Date(),
+        singleRoom: firstAccommodationsSingleRoom,
+        doubleRoom: firstAccommodationsDoubleRoom,
+        doubleBedroom: firstAccommodationsDoubleBedroom,
+        dormRoom: firstAccommodationsDormRoom,
+        breakfast: firstAccommodationsBreakfast,
+        lunch: firstAccommodationsLunch,
+        dinner: firstAccommodationsDinner,
+        wifi: firstAccommodationsWifi,
+        petFriendly: firstAccommodationsPetFriendly,
+        parking: firstAccommodationsParking,
+        gyn: firstAccommodationsGyn,
+        pool: firstAccommodationsPool,
+        onSiteRestaurants: firstAccommodationsOnSiteRestaurants,
+        nearbyRestaurants: firstAccommodationsNearbyRestaurants,
+        roomService: firstAccommodationsRoomService,
+        transportService: firstAccommodationsTransportService,
+        childrensArea: firstAccommodationsChildrensArea,
+        createdAt: new Date(),
       },
     }),
 
     prisma.accommodation.create({
       data: {
         id: secondAccommodationsId,
-        is_active: secondAccommodationsStatus,
+        isActive: secondAccommodationsStatus,
         name: secondAccommodationsName,
-        daily_value: secondAccommodationsDailyValue,
-        image_path: secondAccommodationsImagePath,
-        zip_code: secondAccommodationsZipCode,
-        address_name: secondAccommodationsAddressName,
-        district_name: secondAccommodationsDistrictName,
-        address_number: secondAccommodationsAddressNumber,
+        dailyValue: secondAccommodationsDailyValue,
+        imagePath: secondAccommodationsImagePath,
+        zipCode: secondAccommodationsZipCode,
+        addressName: secondAccommodationsAddressName,
+        districtName: secondAccommodationsDistrictName,
+        addressNumber: secondAccommodationsAddressNumber,
         city: secondAccommodationsCity,
-        faciliti_id: secondFacilityId,
-        created_at: new Date(),
+        singleRoom: secondAccommodationsSingleRoom,
+        doubleRoom: secondAccommodationsDoubleRoom,
+        doubleBedroom: secondAccommodationsDoubleBedroom,
+        dormRoom: secondAccommodationsDormRoom,
+        breakfast: secondAccommodationsBreakfast,
+        lunch: secondAccommodationsLunch,
+        dinner: secondAccommodationsDinner,
+        wifi: secondAccommodationsWifi,
+        petFriendly: secondAccommodationsPetFriendly,
+        parking: secondAccommodationsParking,
+        gyn: secondAccommodationsGyn,
+        pool: secondAccommodationsPool,
+        onSiteRestaurants: secondAccommodationsOnSiteRestaurants,
+        nearbyRestaurants: secondAccommodationsNearbyRestaurants,
+        roomService: secondAccommodationsRoomService,
+        transportService: secondAccommodationsTransportService,
+        childrensArea: secondAccommodationsChildrensArea,
+        createdAt: new Date(),
       },
     }),
 
     prisma.accommodation.create({
       data: {
         id: thirdAccommodationsId,
-        is_active: thirdAccommodationsStatus,
+        isActive: thirdAccommodationsStatus,
         name: thirdAccommodationsName,
-        daily_value: thirdAccommodationsDailyValue,
-        image_path: thirdAccommodationsImagePath,
-        zip_code: thirdAccommodationsZipCode,
-        address_name: thirdAccommodationsAddressName,
-        district_name: thirdAccommodationsDistrictName,
-        address_number: thirdAccommodationsAddressNumber,
+        dailyValue: thirdAccommodationsDailyValue,
+        imagePath: thirdAccommodationsImagePath,
+        zipCode: thirdAccommodationsZipCode,
+        addressName: thirdAccommodationsAddressName,
+        districtName: thirdAccommodationsDistrictName,
+        addressNumber: thirdAccommodationsAddressNumber,
         city: thirdAccommodationsCity,
-        faciliti_id: thirdFacilityId,
-        created_at: new Date(),
+        singleRoom: thirdAccommodationsSingleRoom,
+        doubleRoom: thirdAccommodationsDoubleRoom,
+        doubleBedroom: thirdAccommodationsDoubleBedroom,
+        dormRoom: thirdAccommodationsDormRoom,
+        breakfast: thirdAccommodationsBreakfast,
+        lunch: thirdAccommodationsLunch,
+        dinner: thirdAccommodationsDinner,
+        wifi: thirdAccommodationsWifi,
+        petFriendly: thirdAccommodationsPetFriendly,
+        parking: thirdAccommodationsParking,
+        gyn: thirdAccommodationsGyn,
+        pool: thirdAccommodationsPool,
+        onSiteRestaurants: thirdAccommodationsOnSiteRestaurants,
+        nearbyRestaurants: thirdAccommodationsNearbyRestaurants,
+        roomService: thirdAccommodationsRoomService,
+        transportService: thirdAccommodationsTransportService,
+        childrensArea: thirdAccommodationsChildrensArea,
+        createdAt: new Date(),
       },
     }),
   ])
 
-  // accommodations_on_packages
+  // accommodationsOnPackages
   await Promise.all([
     prisma.accommodationsOnPackages.create({
       data: {
         id: firstAccommodationsOnPackages,
-        package_id: firstPackageId,
-        accommodation_id: firstAccommodationsId,
-        created_at: new Date(),
+        packageId: firstPackageId,
+        accommodationId: firstAccommodationsId,
+        createdAt: new Date(),
       },
     }),
 
     prisma.accommodationsOnPackages.create({
       data: {
         id: secondAccommodationsOnPackages,
-        package_id: firstPackageId,
-        accommodation_id: secondAccommodationsId,
-        created_at: new Date(),
+        packageId: firstPackageId,
+        accommodationId: secondAccommodationsId,
+        createdAt: new Date(),
       },
     }),
 
     prisma.accommodationsOnPackages.create({
       data: {
         id: thirdAccommodationsOnPackages,
-        package_id: secondPackageId,
-        accommodation_id: secondAccommodationsId,
-        created_at: new Date(),
+        packageId: secondPackageId,
+        accommodationId: secondAccommodationsId,
+        createdAt: new Date(),
       },
     }),
 
     prisma.accommodationsOnPackages.create({
       data: {
         id: fourthAccommodationsOnPackages,
-        package_id: secondPackageId,
-        accommodation_id: thirdAccommodationsId,
-        created_at: new Date(),
+        packageId: secondPackageId,
+        accommodationId: thirdAccommodationsId,
+        createdAt: new Date(),
       },
     }),
   ])

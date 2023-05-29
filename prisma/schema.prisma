@@ -11,27 +11,27 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(uuid())
-  name       String
-  email      String   @unique
-  password   String
-  salt       String
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  salt      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  role_id String
-  role    Role   @relation(fields: [role_id], references: [id])
+  roleId String
+  role   Role   @relation(fields: [roleId], references: [id])
 
-  packages_accommodations Order[]
+  packagesAccommodations Order[]
 
   @@map("users")
 }
 
 model Role {
-  id         String   @id @default(uuid())
-  name       String   @unique
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  id        String   @id @default(uuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   user User[]
 
@@ -41,10 +41,10 @@ model Role {
 }
 
 model Permission {
-  id         String   @id @default(uuid())
-  name       String   @unique
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  id        String   @id @default(uuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   roles RolePermission[]
 
@@ -52,40 +52,40 @@ model Permission {
 }
 
 model RolePermission {
-  id            String @id @default(uuid())
-  role_id       String
-  permission_id String
+  id           String @id @default(uuid())
+  roleId       String
+  permissionId String
 
-  role       Role       @relation(fields: [role_id], references: [id])
-  permission Permission @relation(fields: [permission_id], references: [id])
+  role       Role       @relation(fields: [roleId], references: [id])
+  permission Permission @relation(fields: [permissionId], references: [id])
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  @@unique([role_id, permission_id])
-  @@map("roles_permissions")
+  @@unique([roleId, permissionId])
+  @@map("rolesPermissions")
 }
 
 model Itinerary {
-  id                  String  @id @default(uuid())
-  is_active           Boolean
-  name                String
-  number_of_days      Int
-  description         String
-  value_per_person    Decimal
-  content             Json
-  classification      Json
-  transfer_particular Boolean
-  transfer_exclusive  Boolean
-  transfer_shared     Boolean
+  id                 String  @id @default(uuid())
+  isActive           Boolean
+  name               String
+  numberOfDays       Int
+  description        String
+  valuePerPerson     Decimal
+  content            Json
+  classification     Json
+  transferParticular Boolean
+  transferExclusive  Boolean
+  transferShared     Boolean
 
-  category_id String
-  category    Category @relation(fields: [category_id], references: [id])
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
 
   packages ItinerariesOnPackages[]
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@map("itineraries")
 }
@@ -96,61 +96,47 @@ model Category {
 
   itinerary Itinerary[]
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@map("categories")
 }
 
 model Accommodation {
-  id             String  @id @default(uuid())
-  is_active      Boolean
-  name           String
-  daily_value    Decimal
-  image_path     String
-  zip_code       String
-  address_name   String
-  district_name  String
-  address_number String
-  city           String
-
-  faciliti_id String
-  faciliti    Faciliti @relation(fields: [faciliti_id], references: [id])
+  id                String  @id @default(uuid())
+  isActive          Boolean
+  name              String
+  dailyValue        Decimal
+  imagePath         String
+  zipCode           String
+  addressName       String
+  districtName      String
+  addressNumber     String
+  city              String
+  singleRoom        Boolean
+  doubleRoom        Boolean
+  doubleBedroom     Boolean
+  dormRoom          Boolean
+  breakfast         Boolean
+  lunch             Boolean
+  dinner            Boolean
+  wifi              Boolean
+  petFriendly       Boolean
+  parking           Boolean
+  gyn               Boolean
+  pool              Boolean
+  onSiteRestaurants Boolean
+  nearbyRestaurants Boolean
+  roomService       Boolean
+  transportService  Boolean
+  childrensArea     Boolean
 
   packages AccommodationsOnPackages[]
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@map("accommodations")
-}
-
-model Faciliti {
-  id                  String  @id @default(uuid())
-  single_room         Boolean
-  double_room         Boolean
-  double_bedroom      Boolean
-  dorm_room           Boolean
-  breakfast           Boolean
-  lunch               Boolean
-  dinner              Boolean
-  wifi                Boolean
-  pet_friendly        Boolean
-  parking             Boolean
-  gyn                 Boolean
-  pool                Boolean
-  on_site_restaurants Boolean
-  nearby_restaurants  Boolean
-  room_service        Boolean
-  transport_service   Boolean
-  childrens_area      Boolean
-
-  accommodations Accommodation[]
-
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-
-  @@map("facilities")
 }
 
 model Package {
@@ -162,8 +148,8 @@ model Package {
 
   orders Order[]
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@map("packages")
 }
@@ -171,33 +157,33 @@ model Package {
 model ItinerariesOnPackages {
   id String @id @default(uuid())
 
-  itinerary_id String
-  package_id   String
+  itineraryId String
+  packageId   String
 
-  itinerary Itinerary @relation(fields: [itinerary_id], references: [id])
-  package   Package   @relation(fields: [package_id], references: [id])
+  itinerary Itinerary @relation(fields: [itineraryId], references: [id])
+  package   Package   @relation(fields: [packageId], references: [id])
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  @@unique([itinerary_id, package_id])
-  @@map("itineraries_on_packages")
+  @@unique([itineraryId, packageId])
+  @@map("itinerariesOnPackages")
 }
 
 model AccommodationsOnPackages {
   id String @id @default(uuid())
 
-  accommodation_id String
-  package_id       String
+  accommodationId String
+  packageId       String
 
-  accommodation Accommodation @relation(fields: [accommodation_id], references: [id])
-  package       Package       @relation(fields: [package_id], references: [id])
+  accommodation Accommodation @relation(fields: [accommodationId], references: [id])
+  package       Package       @relation(fields: [packageId], references: [id])
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  @@unique([accommodation_id, package_id])
-  @@map("accommodations_on_packages")
+  @@unique([accommodationId, packageId])
+  @@map("accommodationsOnPackages")
 }
 
 model Member {
@@ -212,36 +198,36 @@ model Member {
 }
 
 model Order {
-  id          String  @id @default(uuid())
-  total_value Decimal
+  id         String  @id @default(uuid())
+  totalValue Decimal
 
-  user_id    String
-  package_id String
+  userId    String
+  packageId String
 
-  user    User    @relation(fields: [user_id], references: [id])
-  package Package @relation(fields: [package_id], references: [id])
+  user    User    @relation(fields: [userId], references: [id])
+  package Package @relation(fields: [packageId], references: [id])
 
   member MemberPerOrder[]
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  @@unique([user_id, package_id])
+  @@unique([userId, packageId])
   @@map("orders")
 }
 
 model MemberPerOrder {
   id String @id @default(uuid())
 
-  member_id String
-  order_id  String
+  memberId String
+  orderId  String
 
-  member Member @relation(fields: [member_id], references: [id])
-  order  Order  @relation(fields: [order_id], references: [id])
+  member Member @relation(fields: [memberId], references: [id])
+  order  Order  @relation(fields: [orderId], references: [id])
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  @@unique([member_id, order_id])
-  @@map("member_per_order")
+  @@unique([memberId, orderId])
+  @@map("memberPerOrder")
 }
