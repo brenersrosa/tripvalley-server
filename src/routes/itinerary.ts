@@ -17,6 +17,7 @@ export async function itineraryRoutes(app: FastifyInstance) {
       transferExclusive: z.boolean().default(false),
       transferShared: z.boolean().default(false),
       categoryId: z.string().uuid(),
+      accommodationId: z.string().uuid(),
     })
 
     const {
@@ -27,9 +28,7 @@ export async function itineraryRoutes(app: FastifyInstance) {
       valuePerPerson,
       content,
       classification,
-      transferParticular,
-      transferExclusive,
-      transferShared,
+      accommodationId,
       categoryId,
     } = bodySchema.parse(request.body)
 
@@ -43,10 +42,8 @@ export async function itineraryRoutes(app: FastifyInstance) {
           valuePerPerson,
           content,
           classification,
-          transferParticular,
-          transferExclusive,
-          transferShared,
           categoryId,
+          accommodationId,
         },
       })
 
@@ -102,10 +99,8 @@ export async function itineraryRoutes(app: FastifyInstance) {
       valuePerPerson: z.number(),
       content: z.array(z.string()),
       classification: z.array(z.string()),
-      transferParticular: z.boolean().default(false),
-      transferExclusive: z.boolean().default(false),
-      transferShared: z.boolean().default(false),
       categoryId: z.string().uuid(),
+      accommodationId: z.string().uuid(),
     })
 
     const {
@@ -116,10 +111,8 @@ export async function itineraryRoutes(app: FastifyInstance) {
       valuePerPerson,
       content,
       classification,
-      transferParticular,
-      transferExclusive,
-      transferShared,
       categoryId,
+      accommodationId,
     } = bodySchema.parse(request.body)
 
     try {
@@ -135,10 +128,8 @@ export async function itineraryRoutes(app: FastifyInstance) {
           valuePerPerson,
           content,
           classification,
-          transferParticular,
-          transferExclusive,
-          transferShared,
           categoryId,
+          accommodationId,
         },
       })
 

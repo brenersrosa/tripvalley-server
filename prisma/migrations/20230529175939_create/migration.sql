@@ -48,6 +48,17 @@ CREATE TABLE `rolesPermissions` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
+CREATE TABLE `categories` (
+    `id` VARCHAR(191) NOT NULL,
+    `name` VARCHAR(191) NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+
+    UNIQUE INDEX `categories_name_key`(`name`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
 CREATE TABLE `itineraries` (
     `id` VARCHAR(191) NOT NULL,
     `isActive` BOOLEAN NOT NULL,
@@ -57,24 +68,11 @@ CREATE TABLE `itineraries` (
     `valuePerPerson` DECIMAL(65, 30) NOT NULL,
     `content` JSON NOT NULL,
     `classification` JSON NOT NULL,
-    `transferParticular` BOOLEAN NOT NULL,
-    `transferExclusive` BOOLEAN NOT NULL,
-    `transferShared` BOOLEAN NOT NULL,
     `categoryId` VARCHAR(191) NOT NULL,
+    `accommodationId` VARCHAR(191) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
-    PRIMARY KEY (`id`)
-) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- CreateTable
-CREATE TABLE `categories` (
-    `id` VARCHAR(191) NOT NULL,
-    `name` VARCHAR(191) NOT NULL,
-    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    `updatedAt` DATETIME(3) NOT NULL,
-
-    UNIQUE INDEX `categories_name_key`(`name`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -116,7 +114,11 @@ CREATE TABLE `accommodations` (
 -- CreateTable
 CREATE TABLE `packages` (
     `id` VARCHAR(191) NOT NULL,
+    `isActive` BOOLEAN NOT NULL,
     `name` VARCHAR(191) NOT NULL,
+    `transferParticular` BOOLEAN NOT NULL,
+    `transferExclusive` BOOLEAN NOT NULL,
+    `transferShared` BOOLEAN NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
@@ -132,18 +134,6 @@ CREATE TABLE `itinerariesOnPackages` (
     `updatedAt` DATETIME(3) NOT NULL,
 
     UNIQUE INDEX `itinerariesOnPackages_itineraryId_packageId_key`(`itineraryId`, `packageId`),
-    PRIMARY KEY (`id`)
-) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- CreateTable
-CREATE TABLE `accommodationsOnPackages` (
-    `id` VARCHAR(191) NOT NULL,
-    `accommodationId` VARCHAR(191) NOT NULL,
-    `packageId` VARCHAR(191) NOT NULL,
-    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    `updatedAt` DATETIME(3) NOT NULL,
-
-    UNIQUE INDEX `accommodationsOnPackages_accommodationId_packageId_key`(`accommodationId`, `packageId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -195,16 +185,13 @@ ALTER TABLE `rolesPermissions` ADD CONSTRAINT `rolesPermissions_permissionId_fke
 ALTER TABLE `itineraries` ADD CONSTRAINT `itineraries_categoryId_fkey` FOREIGN KEY (`categoryId`) REFERENCES `categories`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE `itineraries` ADD CONSTRAINT `itineraries_accommodationId_fkey` FOREIGN KEY (`accommodationId`) REFERENCES `accommodations`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE `itinerariesOnPackages` ADD CONSTRAINT `itinerariesOnPackages_itineraryId_fkey` FOREIGN KEY (`itineraryId`) REFERENCES `itineraries`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `itinerariesOnPackages` ADD CONSTRAINT `itinerariesOnPackages_packageId_fkey` FOREIGN KEY (`packageId`) REFERENCES `packages`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE `accommodationsOnPackages` ADD CONSTRAINT `accommodationsOnPackages_accommodationId_fkey` FOREIGN KEY (`accommodationId`) REFERENCES `accommodations`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE `accommodationsOnPackages` ADD CONSTRAINT `accommodationsOnPackages_packageId_fkey` FOREIGN KEY (`packageId`) REFERENCES `packages`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `orders` ADD CONSTRAINT `orders_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

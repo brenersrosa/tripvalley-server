@@ -70,61 +70,6 @@ const fourthCategoryName = 'Rios do Vale'
 const fifthCategoryId = randomUUID()
 const fifthCategoryName = 'Litoral Norte'
 
-// itineraries
-const firstItineraryId = randomUUID()
-const firstItineraryStatus = true
-const firstItineraryName = 'Itinerário 1'
-const firstItineraryNumberOfDays = 2
-const firstItineraryDescription =
-  "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-const firstItineraryValuePerPerson = 10.0
-const firstItineraryContent = ['Conteúdo 1', 'Conteúdo 2', 'Conteúdo 3']
-const firstItineraryClassification = [
-  'Classificação 1',
-  'Classificação 2',
-  'Classificação 3',
-]
-const firstItineraryCategoryId = firstCategoryId
-const firstItineraryTransferExclusive = true
-const firstItineraryTransferParticular = true
-const firstItineraryTransferShared = true
-
-const secondItineraryId = randomUUID()
-const secondItineraryStatus = true
-const secondItineraryName = 'Itinerário 2'
-const secondItineraryNumberOfDays = 3
-const secondItineraryDescription =
-  "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-const secondItineraryValuePerPerson = 15.5
-const secondItineraryContent = ['Conteúdo 1', 'Conteúdo 2', 'Conteúdo 3']
-const secondItineraryClassification = [
-  'Classificação 1',
-  'Classificação 2',
-  'Classificação 3',
-]
-const secondItineraryCategoryId = firstCategoryId
-const secondItineraryTransferExclusive = true
-const secondItineraryTransferParticular = true
-const secondItineraryTransferShared = true
-
-const thirdItineraryId = randomUUID()
-const thirdItineraryStatus = true
-const thirdItineraryName = 'Itinerário 3'
-const thirdItineraryNumberOfDays = 5
-const thirdItineraryDescription =
-  "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-const thirdItineraryValuePerPerson = 20
-const thirdItineraryContent = ['Conteúdo 1', 'Conteúdo 2', 'Conteúdo 3']
-const thirdItineraryClassification = [
-  'Classificação 1',
-  'Classificação 2',
-  'Classificação 3',
-]
-const thirdItineraryCategoryId = firstCategoryId
-const thirdItineraryTransferExclusive = true
-const thirdItineraryTransferParticular = true
-const thirdItineraryTransferShared = true
-
 // accommodations
 const firstAccommodationsId = randomUUID()
 const firstAccommodationsStatus = true
@@ -213,24 +158,75 @@ const thirdAccommodationsRoomService = false
 const thirdAccommodationsTransportService = false
 const thirdAccommodationsChildrensArea = false
 
+// itineraries
+const firstItineraryId = randomUUID()
+const firstItineraryStatus = true
+const firstItineraryName = 'Itinerário 1'
+const firstItineraryNumberOfDays = 2
+const firstItineraryDescription =
+  "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+const firstItineraryValuePerPerson = 10.0
+const firstItineraryContent = ['Conteúdo 1', 'Conteúdo 2', 'Conteúdo 3']
+const firstItineraryClassification = [
+  'Classificação 1',
+  'Classificação 2',
+  'Classificação 3',
+]
+const firstItineraryCategoryId = firstCategoryId
+const firstItineraryAccommodationId = firstAccommodationsId
+
+const secondItineraryId = randomUUID()
+const secondItineraryStatus = true
+const secondItineraryName = 'Itinerário 2'
+const secondItineraryNumberOfDays = 3
+const secondItineraryDescription =
+  "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+const secondItineraryValuePerPerson = 15.5
+const secondItineraryContent = ['Conteúdo 1', 'Conteúdo 2', 'Conteúdo 3']
+const secondItineraryClassification = [
+  'Classificação 1',
+  'Classificação 2',
+  'Classificação 3',
+]
+const secondItineraryCategoryId = firstCategoryId
+const secondItineraryAccommodationId = secondAccommodationsId
+
+const thirdItineraryId = randomUUID()
+const thirdItineraryStatus = true
+const thirdItineraryName = 'Itinerário 3'
+const thirdItineraryNumberOfDays = 5
+const thirdItineraryDescription =
+  "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+const thirdItineraryValuePerPerson = 20
+const thirdItineraryContent = ['Conteúdo 1', 'Conteúdo 2', 'Conteúdo 3']
+const thirdItineraryClassification = [
+  'Classificação 1',
+  'Classificação 2',
+  'Classificação 3',
+]
+const thirdItineraryCategoryId = firstCategoryId
+const thirdItineraryAccommodationId = thirdAccommodationsId
+
 // packages
 const firstPackageId = randomUUID()
+const firstPackageIsActive = true
 const firstPackageName = 'Pacote 1'
+const firstPackageTransferParticular = true
+const firstPackageTransferExclusive = true
+const firstPackageTransferShared = true
 
 const secondPackageId = randomUUID()
+const secondPackageIsActive = true
 const secondPackageName = 'Pacote 2'
+const secondPackageTransferParticular = false
+const secondPackageTransferExclusive = false
+const secondPackageTransferShared = true
 
 // itinerariesOnPackages
 const firstItinerariesOnPackages = randomUUID()
 const secondItinerariesOnPackages = randomUUID()
 const thirdItinerariesOnPackages = randomUUID()
 const fourthItinerariesOnPackages = randomUUID()
-
-// accommodationsOnPackages
-const firstAccommodationsOnPackages = randomUUID()
-const secondAccommodationsOnPackages = randomUUID()
-const thirdAccommodationsOnPackages = randomUUID()
-const fourthAccommodationsOnPackages = randomUUID()
 
 async function run() {
   await prisma.user.deleteMany()
@@ -240,7 +236,6 @@ async function run() {
   await prisma.itinerariesOnPackages.deleteMany()
   await prisma.itinerary.deleteMany()
   await prisma.category.deleteMany()
-  await prisma.accommodationsOnPackages.deleteMany()
   await prisma.accommodation.deleteMany()
   await prisma.package.deleteMany()
 
@@ -408,121 +403,6 @@ async function run() {
     }),
   ])
 
-  // itinerary
-  await Promise.all([
-    prisma.itinerary.create({
-      data: {
-        id: firstItineraryId,
-        isActive: firstItineraryStatus,
-        name: firstItineraryName,
-        numberOfDays: firstItineraryNumberOfDays,
-        description: firstItineraryDescription,
-        valuePerPerson: firstItineraryValuePerPerson,
-        content: firstItineraryContent,
-        classification: firstItineraryClassification,
-        categoryId: firstItineraryCategoryId,
-        transferExclusive: firstItineraryTransferExclusive,
-        transferParticular: firstItineraryTransferParticular,
-        transferShared: firstItineraryTransferShared,
-        createdAt: new Date(),
-      },
-    }),
-
-    prisma.itinerary.create({
-      data: {
-        id: secondItineraryId,
-        isActive: secondItineraryStatus,
-        name: secondItineraryName,
-        numberOfDays: secondItineraryNumberOfDays,
-        description: secondItineraryDescription,
-        valuePerPerson: secondItineraryValuePerPerson,
-        content: secondItineraryContent,
-        classification: secondItineraryClassification,
-        categoryId: secondItineraryCategoryId,
-        transferExclusive: secondItineraryTransferExclusive,
-        transferParticular: secondItineraryTransferParticular,
-        transferShared: secondItineraryTransferShared,
-        createdAt: new Date(),
-      },
-    }),
-
-    prisma.itinerary.create({
-      data: {
-        id: thirdItineraryId,
-        isActive: thirdItineraryStatus,
-        name: thirdItineraryName,
-        numberOfDays: thirdItineraryNumberOfDays,
-        description: thirdItineraryDescription,
-        valuePerPerson: thirdItineraryValuePerPerson,
-        content: thirdItineraryContent,
-        classification: thirdItineraryClassification,
-        categoryId: thirdItineraryCategoryId,
-        transferExclusive: thirdItineraryTransferExclusive,
-        transferParticular: thirdItineraryTransferParticular,
-        transferShared: thirdItineraryTransferShared,
-        createdAt: new Date(),
-      },
-    }),
-  ])
-
-  // package
-  await Promise.all([
-    prisma.package.create({
-      data: {
-        id: firstPackageId,
-        name: firstPackageName,
-        createdAt: new Date(),
-      },
-    }),
-
-    prisma.package.create({
-      data: {
-        id: secondPackageId,
-        name: secondPackageName,
-        createdAt: new Date(),
-      },
-    }),
-  ])
-
-  // itinerariesOnPackages
-  await Promise.all([
-    prisma.itinerariesOnPackages.create({
-      data: {
-        id: firstItinerariesOnPackages,
-        packageId: firstPackageId,
-        itineraryId: firstItineraryId,
-        createdAt: new Date(),
-      },
-    }),
-
-    prisma.itinerariesOnPackages.create({
-      data: {
-        id: secondItinerariesOnPackages,
-        packageId: firstPackageId,
-        itineraryId: secondItineraryId,
-        createdAt: new Date(),
-      },
-    }),
-
-    prisma.itinerariesOnPackages.create({
-      data: {
-        id: thirdItinerariesOnPackages,
-        packageId: secondPackageId,
-        itineraryId: firstItineraryId,
-        createdAt: new Date(),
-      },
-    }),
-
-    prisma.itinerariesOnPackages.create({
-      data: {
-        id: fourthItinerariesOnPackages,
-        packageId: secondPackageId,
-        itineraryId: thirdItineraryId,
-        createdAt: new Date(),
-      },
-    }),
-  ])
-
   // accommodations
   await Promise.all([
     prisma.accommodation.create({
@@ -625,40 +505,118 @@ async function run() {
     }),
   ])
 
-  // accommodationsOnPackages
+  // itinerary
   await Promise.all([
-    prisma.accommodationsOnPackages.create({
+    prisma.itinerary.create({
       data: {
-        id: firstAccommodationsOnPackages,
+        id: firstItineraryId,
+        isActive: firstItineraryStatus,
+        name: firstItineraryName,
+        numberOfDays: firstItineraryNumberOfDays,
+        description: firstItineraryDescription,
+        valuePerPerson: firstItineraryValuePerPerson,
+        content: firstItineraryContent,
+        classification: firstItineraryClassification,
+        categoryId: firstItineraryCategoryId,
+        accommodationId: firstItineraryAccommodationId,
+        createdAt: new Date(),
+      },
+    }),
+
+    prisma.itinerary.create({
+      data: {
+        id: secondItineraryId,
+        isActive: secondItineraryStatus,
+        name: secondItineraryName,
+        numberOfDays: secondItineraryNumberOfDays,
+        description: secondItineraryDescription,
+        valuePerPerson: secondItineraryValuePerPerson,
+        content: secondItineraryContent,
+        classification: secondItineraryClassification,
+        categoryId: secondItineraryCategoryId,
+        accommodationId: secondItineraryAccommodationId,
+        createdAt: new Date(),
+      },
+    }),
+
+    prisma.itinerary.create({
+      data: {
+        id: thirdItineraryId,
+        isActive: thirdItineraryStatus,
+        name: thirdItineraryName,
+        numberOfDays: thirdItineraryNumberOfDays,
+        description: thirdItineraryDescription,
+        valuePerPerson: thirdItineraryValuePerPerson,
+        content: thirdItineraryContent,
+        classification: thirdItineraryClassification,
+        categoryId: thirdItineraryCategoryId,
+        accommodationId: thirdItineraryAccommodationId,
+        createdAt: new Date(),
+      },
+    }),
+  ])
+
+  // package
+  await Promise.all([
+    prisma.package.create({
+      data: {
+        id: firstPackageId,
+        isActive: firstPackageIsActive,
+        name: firstPackageName,
+        transferParticular: firstPackageTransferParticular,
+        transferExclusive: firstPackageTransferExclusive,
+        transferShared: firstPackageTransferShared,
+        createdAt: new Date(),
+      },
+    }),
+
+    prisma.package.create({
+      data: {
+        id: secondPackageId,
+        isActive: secondPackageIsActive,
+        name: secondPackageName,
+        transferParticular: secondPackageTransferParticular,
+        transferExclusive: secondPackageTransferExclusive,
+        transferShared: secondPackageTransferShared,
+        createdAt: new Date(),
+      },
+    }),
+  ])
+
+  // itinerariesOnPackages
+  await Promise.all([
+    prisma.itinerariesOnPackages.create({
+      data: {
+        id: firstItinerariesOnPackages,
         packageId: firstPackageId,
-        accommodationId: firstAccommodationsId,
+        itineraryId: firstItineraryId,
         createdAt: new Date(),
       },
     }),
 
-    prisma.accommodationsOnPackages.create({
+    prisma.itinerariesOnPackages.create({
       data: {
-        id: secondAccommodationsOnPackages,
+        id: secondItinerariesOnPackages,
         packageId: firstPackageId,
-        accommodationId: secondAccommodationsId,
+        itineraryId: secondItineraryId,
         createdAt: new Date(),
       },
     }),
 
-    prisma.accommodationsOnPackages.create({
+    prisma.itinerariesOnPackages.create({
       data: {
-        id: thirdAccommodationsOnPackages,
+        id: thirdItinerariesOnPackages,
         packageId: secondPackageId,
-        accommodationId: secondAccommodationsId,
+        itineraryId: firstItineraryId,
         createdAt: new Date(),
       },
     }),
 
-    prisma.accommodationsOnPackages.create({
+    prisma.itinerariesOnPackages.create({
       data: {
-        id: fourthAccommodationsOnPackages,
+        id: fourthItinerariesOnPackages,
         packageId: secondPackageId,
-        accommodationId: thirdAccommodationsId,
+        itineraryId: thirdItineraryId,
         createdAt: new Date(),
       },
     }),

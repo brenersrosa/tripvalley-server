@@ -66,30 +66,6 @@ model RolePermission {
   @@map("rolesPermissions")
 }
 
-model Itinerary {
-  id                 String  @id @default(uuid())
-  isActive           Boolean
-  name               String
-  numberOfDays       Int
-  description        String
-  valuePerPerson     Decimal
-  content            Json
-  classification     Json
-  transferParticular Boolean
-  transferExclusive  Boolean
-  transferShared     Boolean
-
-  categoryId String
-  category   Category @relation(fields: [categoryId], references: [id])
-
-  packages ItinerariesOnPackages[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@map("itineraries")
-}
-
 model Category {
   id   String @id @default(uuid())
   name String @unique
@@ -100,6 +76,30 @@ model Category {
   updatedAt DateTime @updatedAt
 
   @@map("categories")
+}
+
+model Itinerary {
+  id             String  @id @default(uuid())
+  isActive       Boolean
+  name           String
+  numberOfDays   Int
+  description    String
+  valuePerPerson Decimal
+  content        Json
+  classification Json
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  accommodationId String
+  accommodation   Accommodation @relation(fields: [accommodationId], references: [id])
+
+  packages ItinerariesOnPackages[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("itineraries")
 }
 
 model Accommodation {
@@ -131,7 +131,7 @@ model Accommodation {
   transportService  Boolean
   childrensArea     Boolean
 
-  packages AccommodationsOnPackages[]
+  itineraries Itinerary[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -140,11 +140,14 @@ model Accommodation {
 }
 
 model Package {
-  id   String @id @default(uuid())
-  name String
+  id                 String  @id @default(uuid())
+  isActive           Boolean
+  name               String
+  transferParticular Boolean
+  transferExclusive  Boolean
+  transferShared     Boolean
 
-  itineraries    ItinerariesOnPackages[]
-  accommodations AccommodationsOnPackages[]
+  itineraries ItinerariesOnPackages[]
 
   orders Order[]
 
@@ -168,22 +171,6 @@ model ItinerariesOnPackages {
 
   @@unique([itineraryId, packageId])
   @@map("itinerariesOnPackages")
-}
-
-model AccommodationsOnPackages {
-  id String @id @default(uuid())
-
-  accommodationId String
-  packageId       String
-
-  accommodation Accommodation @relation(fields: [accommodationId], references: [id])
-  package       Package       @relation(fields: [packageId], references: [id])
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@unique([accommodationId, packageId])
-  @@map("accommodationsOnPackages")
 }
 
 model Member {
