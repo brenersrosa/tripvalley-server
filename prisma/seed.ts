@@ -72,7 +72,7 @@ const fifthCategoryName = 'Litoral Norte'
 
 // accommodations
 const firstAccommodationsId = randomUUID()
-const firstAccommodationsStatus = true
+const firstAccommodationsStatus = 'active'
 const firstAccommodationsName = 'Hospedagem 1'
 const firstAccommodationsDailyValue = 10.0
 const firstAccommodationsImagePath =
@@ -101,7 +101,7 @@ const firstAccommodationsTransportService = true
 const firstAccommodationsChildrensArea = true
 
 const secondAccommodationsId = randomUUID()
-const secondAccommodationsStatus = true
+const secondAccommodationsStatus = 'active'
 const secondAccommodationsName = 'Hospedagem 2'
 const secondAccommodationsDailyValue = 20.0
 const secondAccommodationsImagePath =
@@ -130,7 +130,7 @@ const secondAccommodationsTransportService = false
 const secondAccommodationsChildrensArea = false
 
 const thirdAccommodationsId = randomUUID()
-const thirdAccommodationsStatus = true
+const thirdAccommodationsStatus = 'active'
 const thirdAccommodationsName = 'Hospedagem 3'
 const thirdAccommodationsDailyValue = 30.0
 const thirdAccommodationsImagePath =
@@ -160,7 +160,7 @@ const thirdAccommodationsChildrensArea = false
 
 // itineraries
 const firstItineraryId = randomUUID()
-const firstItineraryStatus = true
+const firstItineraryStatus = 'active'
 const firstItineraryName = 'Itinerário 1'
 const firstItineraryNumberOfDays = 2
 const firstItineraryDescription =
@@ -176,7 +176,7 @@ const firstItineraryCategoryId = firstCategoryId
 const firstItineraryAccommodationId = firstAccommodationsId
 
 const secondItineraryId = randomUUID()
-const secondItineraryStatus = true
+const secondItineraryStatus = 'active'
 const secondItineraryName = 'Itinerário 2'
 const secondItineraryNumberOfDays = 3
 const secondItineraryDescription =
@@ -192,7 +192,7 @@ const secondItineraryCategoryId = firstCategoryId
 const secondItineraryAccommodationId = secondAccommodationsId
 
 const thirdItineraryId = randomUUID()
-const thirdItineraryStatus = true
+const thirdItineraryStatus = 'active'
 const thirdItineraryName = 'Itinerário 3'
 const thirdItineraryNumberOfDays = 5
 const thirdItineraryDescription =
@@ -209,14 +209,14 @@ const thirdItineraryAccommodationId = thirdAccommodationsId
 
 // packages
 const firstPackageId = randomUUID()
-const firstPackageIsActive = true
+const firstPackageIsActive = 'active'
 const firstPackageName = 'Pacote 1'
 const firstPackageTransferParticular = true
 const firstPackageTransferExclusive = true
 const firstPackageTransferShared = true
 
 const secondPackageId = randomUUID()
-const secondPackageIsActive = true
+const secondPackageIsActive = 'active'
 const secondPackageName = 'Pacote 2'
 const secondPackageTransferParticular = false
 const secondPackageTransferExclusive = false

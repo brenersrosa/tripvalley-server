@@ -4,9 +4,9 @@ import { prisma } from '../lib/prisma'
 
 export async function accommodationRoutes(app: FastifyInstance) {
   // route create accommodation
-  app.post('/accommodation', async (request, reply) => {
+  app.post('/accommodations', async (request, reply) => {
     const bodySchema = z.object({
-      isActive: z.boolean().default(true),
+      isActive: z.enum(['active', 'inactive']).default('active'),
       name: z.string(),
       dailyValue: z.number(),
       imagePath: z.string(),
@@ -104,7 +104,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
   })
 
   // route get all accommodations
-  app.get('/accommodation', async (request) => {
+  app.get('/accommodations', async (request) => {
     const accommodations = await prisma.accommodation.findMany({
       orderBy: {
         createdAt: 'desc',
@@ -115,7 +115,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
   })
 
   // route get one accommodation by id
-  app.get('/accommodation/:id', async (request) => {
+  app.get('/accommodations/:id', async (request) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })
@@ -132,7 +132,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
   })
 
   // route update accommodation
-  app.put('/accommodation/:id', async (request, reply) => {
+  app.put('/accommodations/:id', async (request, reply) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })
@@ -140,7 +140,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
     const { id } = paramsSchema.parse(request.params)
 
     const bodySchema = z.object({
-      isActive: z.boolean().default(true),
+      isActive: z.enum(['active', 'inactive']).default('active'),
       name: z.string(),
       dailyValue: z.number(),
       imagePath: z.string(),
@@ -245,7 +245,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
   })
 
   // route delete accommodation
-  app.delete('/accommodation/:id', async (request, reply) => {
+  app.delete('/accommodations/:id', async (request, reply) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })

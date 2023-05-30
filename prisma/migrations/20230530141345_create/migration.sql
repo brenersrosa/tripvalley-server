@@ -61,7 +61,7 @@ CREATE TABLE `categories` (
 -- CreateTable
 CREATE TABLE `itineraries` (
     `id` VARCHAR(191) NOT NULL,
-    `isActive` BOOLEAN NOT NULL,
+    `isActive` ENUM('active', 'inactive') NOT NULL,
     `name` VARCHAR(191) NOT NULL,
     `numberOfDays` INTEGER NOT NULL,
     `description` VARCHAR(191) NOT NULL,
@@ -79,7 +79,7 @@ CREATE TABLE `itineraries` (
 -- CreateTable
 CREATE TABLE `accommodations` (
     `id` VARCHAR(191) NOT NULL,
-    `isActive` BOOLEAN NOT NULL,
+    `isActive` ENUM('active', 'inactive') NOT NULL,
     `name` VARCHAR(191) NOT NULL,
     `dailyValue` DECIMAL(65, 30) NOT NULL,
     `imagePath` VARCHAR(191) NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE `accommodations` (
 -- CreateTable
 CREATE TABLE `packages` (
     `id` VARCHAR(191) NOT NULL,
-    `isActive` BOOLEAN NOT NULL,
+    `isActive` ENUM('active', 'inactive') NOT NULL,
     `name` VARCHAR(191) NOT NULL,
     `transferParticular` BOOLEAN NOT NULL,
     `transferExclusive` BOOLEAN NOT NULL,
@@ -138,37 +138,17 @@ CREATE TABLE `itinerariesOnPackages` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `members` (
-    `id` VARCHAR(191) NOT NULL,
-    `name` VARCHAR(191) NOT NULL,
-    `document` VARCHAR(191) NOT NULL,
-    `age` VARCHAR(191) NOT NULL,
-
-    PRIMARY KEY (`id`)
-) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- CreateTable
 CREATE TABLE `orders` (
     `id` VARCHAR(191) NOT NULL,
+    `status` ENUM('awaiting', 'refused', 'accept', 'canceled') NOT NULL,
     `totalValue` DECIMAL(65, 30) NOT NULL,
+    `companions` JSON NOT NULL,
     `userId` VARCHAR(191) NOT NULL,
     `packageId` VARCHAR(191) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
     UNIQUE INDEX `orders_userId_packageId_key`(`userId`, `packageId`),
-    PRIMARY KEY (`id`)
-) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- CreateTable
-CREATE TABLE `memberPerOrder` (
-    `id` VARCHAR(191) NOT NULL,
-    `memberId` VARCHAR(191) NOT NULL,
-    `orderId` VARCHAR(191) NOT NULL,
-    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    `updatedAt` DATETIME(3) NOT NULL,
-
-    UNIQUE INDEX `memberPerOrder_memberId_orderId_key`(`memberId`, `orderId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -198,9 +178,3 @@ ALTER TABLE `orders` ADD CONSTRAINT `orders_userId_fkey` FOREIGN KEY (`userId`) 
 
 -- AddForeignKey
 ALTER TABLE `orders` ADD CONSTRAINT `orders_packageId_fkey` FOREIGN KEY (`packageId`) REFERENCES `packages`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE `memberPerOrder` ADD CONSTRAINT `memberPerOrder_memberId_fkey` FOREIGN KEY (`memberId`) REFERENCES `members`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE `memberPerOrder` ADD CONSTRAINT `memberPerOrder_orderId_fkey` FOREIGN KEY (`orderId`) REFERENCES `orders`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

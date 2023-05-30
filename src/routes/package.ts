@@ -4,9 +4,9 @@ import { prisma } from '../lib/prisma'
 
 export async function packageRoutes(app: FastifyInstance) {
   // route create package
-  app.post('/package', async (request, reply) => {
+  app.post('/packages', async (request, reply) => {
     const bodySchema = z.object({
-      isActive: z.boolean().default(true),
+      isActive: z.enum(['active', 'inactive']).default('active'),
       name: z.string(),
       transferParticular: z.boolean().default(false),
       transferExclusive: z.boolean().default(false),
@@ -26,7 +26,7 @@ export async function packageRoutes(app: FastifyInstance) {
     console.log(itineraries)
 
     try {
-      await prisma.package.create({
+      const result = await prisma.package.create({
         data: {
           isActive,
           name,
@@ -45,14 +45,16 @@ export async function packageRoutes(app: FastifyInstance) {
         },
       })
 
-      return reply.status(201).send({ message: 'Package created with success' })
+      return reply
+        .status(201)
+        .send({ message: 'Package created with success', result })
     } catch (error) {
       console.log(error)
     }
   })
 
   // route get all accommodations
-  app.get('/package', async (request) => {
+  app.get('/packages', async (request) => {
     const packages = await prisma.package.findMany({
       orderBy: {
         createdAt: 'desc',
@@ -82,7 +84,7 @@ export async function packageRoutes(app: FastifyInstance) {
   })
 
   // route get one accommodation by id
-  app.get('/package/:id', async (request) => {
+  app.get('/packages/:id', async (request) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })
@@ -111,7 +113,7 @@ export async function packageRoutes(app: FastifyInstance) {
   })
 
   // route update package
-  app.put('/package/:id', async (request, reply) => {
+  app.put('/packages/:id', async (request, reply) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })
@@ -119,7 +121,7 @@ export async function packageRoutes(app: FastifyInstance) {
     const { id } = paramsSchema.parse(request.params)
 
     const bodySchema = z.object({
-      isActive: z.boolean(),
+      isActive: z.enum(['active', 'inactive']).default('active'),
       name: z.string(),
       transferParticular: z.boolean(),
       transferExclusive: z.boolean(),
@@ -127,7 +129,7 @@ export async function packageRoutes(app: FastifyInstance) {
       itineraries: z.array(
         z.object({
           id: z.string().uuid(),
-          isActive: z.boolean(),
+          isActive: z.enum(['active', 'inactive']).default('active'),
           name: z.string(),
           numberOfDays: z.number(),
           description: z.string(),
@@ -213,7 +215,7 @@ export async function packageRoutes(app: FastifyInstance) {
   })
 
   // // route delete package
-  app.delete('/package/:id', async (request, reply) => {
+  app.delete('/packages/:id', async (request, reply) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })

@@ -4,9 +4,9 @@ import { prisma } from '../lib/prisma'
 
 export async function itineraryRoutes(app: FastifyInstance) {
   // route create itinerary
-  app.post('/itinerary', async (request, reply) => {
+  app.post('/itineraries', async (request, reply) => {
     const bodySchema = z.object({
-      isActive: z.boolean().default(true),
+      isActive: z.enum(['active', 'inactive']).default('active'),
       name: z.string(),
       numberOfDays: z.number(),
       description: z.string(),
@@ -56,7 +56,7 @@ export async function itineraryRoutes(app: FastifyInstance) {
   })
 
   // route get all itineraries
-  app.get('/itinerary', async (request) => {
+  app.get('/itineraries', async (request) => {
     const itineraries = await prisma.itinerary.findMany({
       orderBy: {
         createdAt: 'desc',
@@ -67,7 +67,7 @@ export async function itineraryRoutes(app: FastifyInstance) {
   })
 
   // route get one itinerary by id
-  app.get('/itinerary/:id', async (request) => {
+  app.get('/itineraries/:id', async (request) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })
@@ -84,7 +84,7 @@ export async function itineraryRoutes(app: FastifyInstance) {
   })
 
   // route update itinerary
-  app.put('/itinerary/:id', async (request, reply) => {
+  app.put('/itineraries/:id', async (request, reply) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })
@@ -92,7 +92,7 @@ export async function itineraryRoutes(app: FastifyInstance) {
     const { id } = paramsSchema.parse(request.params)
 
     const bodySchema = z.object({
-      isActive: z.boolean().default(true),
+      isActive: z.enum(['active', 'inactive']).default('active'),
       name: z.string(),
       numberOfDays: z.number(),
       description: z.string(),
@@ -146,7 +146,7 @@ export async function itineraryRoutes(app: FastifyInstance) {
   })
 
   // route delete itinerary
-  app.delete('/itinerary/:id', async (request, reply) => {
+  app.delete('/itineraries/:id', async (request, reply) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })

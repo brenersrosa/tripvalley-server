@@ -78,9 +78,14 @@ model Category {
   @@map("categories")
 }
 
+enum Status {
+  active
+  inactive
+}
+
 model Itinerary {
   id             String  @id @default(uuid())
-  isActive       Boolean
+  isActive       Status
   name           String
   numberOfDays   Int
   description    String
@@ -104,7 +109,7 @@ model Itinerary {
 
 model Accommodation {
   id                String  @id @default(uuid())
-  isActive          Boolean
+  isActive          Status
   name              String
   dailyValue        Decimal
   imagePath         String
@@ -141,7 +146,7 @@ model Accommodation {
 
 model Package {
   id                 String  @id @default(uuid())
-  isActive           Boolean
+  isActive           Status
   name               String
   transferParticular Boolean
   transferExclusive  Boolean
@@ -173,20 +178,18 @@ model ItinerariesOnPackages {
   @@map("itinerariesOnPackages")
 }
 
-model Member {
-  id       String @id @default(uuid())
-  name     String
-  document String
-  age      String
-
-  order MemberPerOrder[]
-
-  @@map("members")
+enum OrderStatus {
+  awaiting
+  refused
+  accept
+  canceled
 }
 
 model Order {
-  id         String  @id @default(uuid())
+  id         String      @id @default(uuid())
+  status     OrderStatus
   totalValue Decimal
+  companions Json
 
   userId    String
   packageId String
@@ -194,27 +197,9 @@ model Order {
   user    User    @relation(fields: [userId], references: [id])
   package Package @relation(fields: [packageId], references: [id])
 
-  member MemberPerOrder[]
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@unique([userId, packageId])
   @@map("orders")
-}
-
-model MemberPerOrder {
-  id String @id @default(uuid())
-
-  memberId String
-  orderId  String
-
-  member Member @relation(fields: [memberId], references: [id])
-  order  Order  @relation(fields: [orderId], references: [id])
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@unique([memberId, orderId])
-  @@map("memberPerOrder")
 }
