@@ -74,6 +74,8 @@ const fifthCategoryName = 'Litoral Norte'
 const firstAccommodationsId = randomUUID()
 const firstAccommodationsStatus = 'active'
 const firstAccommodationsName = 'Hospedagem 1'
+const firstAccommodationsDescription =
+  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.'
 const firstAccommodationsDailyValue = 10.0
 const firstAccommodationsImagePath =
   'https://images.pexels.com/photos/6775268/pexels-photo-6775268.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
@@ -103,6 +105,8 @@ const firstAccommodationsChildrensArea = true
 const secondAccommodationsId = randomUUID()
 const secondAccommodationsStatus = 'active'
 const secondAccommodationsName = 'Hospedagem 2'
+const secondAccommodationsDescription =
+  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.'
 const secondAccommodationsDailyValue = 20.0
 const secondAccommodationsImagePath =
   'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
@@ -132,6 +136,8 @@ const secondAccommodationsChildrensArea = false
 const thirdAccommodationsId = randomUUID()
 const thirdAccommodationsStatus = 'active'
 const thirdAccommodationsName = 'Hospedagem 3'
+const thirdAccommodationsDescription =
+  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.'
 const thirdAccommodationsDailyValue = 30.0
 const thirdAccommodationsImagePath =
   'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
@@ -410,6 +416,7 @@ async function run() {
         id: firstAccommodationsId,
         isActive: firstAccommodationsStatus,
         name: firstAccommodationsName,
+        description: firstAccommodationsDescription,
         dailyValue: firstAccommodationsDailyValue,
         imagePath: firstAccommodationsImagePath,
         zipCode: firstAccommodationsZipCode,
@@ -443,6 +450,7 @@ async function run() {
         id: secondAccommodationsId,
         isActive: secondAccommodationsStatus,
         name: secondAccommodationsName,
+        description: secondAccommodationsDescription,
         dailyValue: secondAccommodationsDailyValue,
         imagePath: secondAccommodationsImagePath,
         zipCode: secondAccommodationsZipCode,
@@ -476,6 +484,7 @@ async function run() {
         id: thirdAccommodationsId,
         isActive: thirdAccommodationsStatus,
         name: thirdAccommodationsName,
+        description: thirdAccommodationsDescription,
         dailyValue: thirdAccommodationsDailyValue,
         imagePath: thirdAccommodationsImagePath,
         zipCode: thirdAccommodationsZipCode,

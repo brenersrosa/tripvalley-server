@@ -8,6 +8,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
     const bodySchema = z.object({
       isActive: z.enum(['active', 'inactive']).default('active'),
       name: z.string(),
+      description: z.string(),
       dailyValue: z.number(),
       imagePath: z.string(),
       zipCode: z.string(),
@@ -37,6 +38,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
     const {
       isActive,
       name,
+      description,
       dailyValue,
       imagePath,
       zipCode,
@@ -68,6 +70,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
         data: {
           isActive,
           name,
+          description,
           dailyValue,
           imagePath,
           zipCode,
@@ -142,6 +145,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
     const bodySchema = z.object({
       isActive: z.enum(['active', 'inactive']).default('active'),
       name: z.string(),
+      description: z.string(),
       dailyValue: z.number(),
       imagePath: z.string(),
       zipCode: z.string(),
@@ -171,6 +175,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
     const {
       isActive,
       name,
+      description,
       dailyValue,
       imagePath,
       zipCode,
@@ -205,6 +210,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
         data: {
           isActive,
           name,
+          description,
           dailyValue,
           imagePath,
           zipCode,
