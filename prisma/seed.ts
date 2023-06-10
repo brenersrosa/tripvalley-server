@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { PrismaClient } from '@prisma/client'
 import { randomUUID } from 'crypto'
 
@@ -143,18 +144,18 @@ const thirdAccommodationsImagePath =
   'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
 const thirdAccommodationsZipCode = '12605-000'
 const thirdAccommodationsAddressName = 'Rua 3'
-const thirdAccommodationsDistrictName = 'Bairro C'
+const thirdAccommodationsDistrictName = 'Bairro D'
 const thirdAccommodationsAddressNumber = '700'
-const thirdAccommodationsCity = 'Cidade Z'
+const thirdAccommodationsCity = 'Cidade W'
 const thirdAccommodationsSingleRoom = true
 const thirdAccommodationsDoubleRoom = true
 const thirdAccommodationsDoubleBedroom = true
 const thirdAccommodationsDormRoom = false
-const thirdAccommodationsBreakfast = false
-const thirdAccommodationsLunch = false
+const thirdAccommodationsBreakfast = true
+const thirdAccommodationsLunch = true
 const thirdAccommodationsDinner = false
 const thirdAccommodationsWifi = true
-const thirdAccommodationsPetFriendly = false
+const thirdAccommodationsPetFriendly = true
 const thirdAccommodationsParking = false
 const thirdAccommodationsGyn = false
 const thirdAccommodationsPool = false
@@ -163,6 +164,38 @@ const thirdAccommodationsNearbyRestaurants = false
 const thirdAccommodationsRoomService = false
 const thirdAccommodationsTransportService = false
 const thirdAccommodationsChildrensArea = false
+
+// accommodations
+const fourthAccommodationsId = randomUUID()
+const fourthAccommodationsStatus = 'active'
+const fourthAccommodationsName = 'Hospedagem 1'
+const fourthAccommodationsDescription =
+  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.'
+const fourthAccommodationsDailyValue = 10.0
+const fourthAccommodationsImagePath =
+  'https://images.pexels.com/photos/6775268/pexels-photo-6775268.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
+const fourthAccommodationsZipCode = '12605-000'
+const fourthAccommodationsAddressName = 'Rua 1'
+const fourthAccommodationsDistrictName = 'Bairro A'
+const fourthAccommodationsAddressNumber = '100'
+const fourthAccommodationsCity = 'Cidade X'
+const fourthAccommodationsSingleRoom = true
+const fourthAccommodationsDoubleRoom = true
+const fourthAccommodationsDoubleBedroom = true
+const fourthAccommodationsDormRoom = true
+const fourthAccommodationsBreakfast = true
+const fourthAccommodationsLunch = true
+const fourthAccommodationsDinner = true
+const fourthAccommodationsWifi = true
+const fourthAccommodationsPetFriendly = true
+const fourthAccommodationsParking = true
+const fourthAccommodationsGyn = true
+const fourthAccommodationsPool = true
+const fourthAccommodationsOnSiteRestaurants = true
+const fourthAccommodationsNearbyRestaurants = true
+const fourthAccommodationsRoomService = true
+const fourthAccommodationsTransportService = true
+const fourthAccommodationsChildrensArea = true
 
 // itineraries
 const firstItineraryId = randomUUID()
@@ -194,7 +227,7 @@ const secondItineraryClassification = [
   'Classificação 2',
   'Classificação 3',
 ]
-const secondItineraryCategoryId = firstCategoryId
+const secondItineraryCategoryId = secondCategoryId
 const secondItineraryAccommodationId = secondAccommodationsId
 
 const thirdItineraryId = randomUUID()
@@ -210,8 +243,24 @@ const thirdItineraryClassification = [
   'Classificação 2',
   'Classificação 3',
 ]
-const thirdItineraryCategoryId = firstCategoryId
+const thirdItineraryCategoryId = thirdCategoryId
 const thirdItineraryAccommodationId = thirdAccommodationsId
+
+const fourthItineraryId = randomUUID()
+const fourthItineraryStatus = 'active'
+const fourthItineraryName = 'Itinerário 4'
+const fourthItineraryNumberOfDays = 8
+const fourthItineraryDescription =
+  "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+const fourthItineraryValuePerPerson = 20
+const fourthItineraryContent = ['Conteúdo 1', 'Conteúdo 2', 'Conteúdo 3']
+const fourthItineraryClassification = [
+  'Classificação 1',
+  'Classificação 2',
+  'Classificação 3',
+]
+const fourthItineraryCategoryId = fourthCategoryId
+const fourthItineraryAccommodationId = fourthAccommodationsId
 
 // packages
 const firstPackageId = randomUUID()
@@ -227,6 +276,20 @@ const secondPackageName = 'Pacote 2'
 const secondPackageTransferParticular = false
 const secondPackageTransferExclusive = false
 const secondPackageTransferShared = true
+
+const thirdPackageId = randomUUID()
+const thirdPackageIsActive = 'active'
+const thirdPackageName = 'Pacote 3'
+const thirdPackageTransferParticular = false
+const thirdPackageTransferExclusive = false
+const thirdPackageTransferShared = true
+
+const fourthPackageId = randomUUID()
+const fourthPackageIsActive = 'active'
+const fourthPackageName = 'Pacote 4'
+const fourthPackageTransferParticular = false
+const fourthPackageTransferExclusive = false
+const fourthPackageTransferShared = true
 
 // itinerariesOnPackages
 const firstItinerariesOnPackages = randomUUID()
@@ -515,71 +578,38 @@ async function run() {
 
     prisma.accommodation.create({
       data: {
-        id: randomUUID(),
-        isActive: thirdAccommodationsStatus,
-        name: thirdAccommodationsName,
-        description: thirdAccommodationsDescription,
-        dailyValue: thirdAccommodationsDailyValue,
-        imagePath: thirdAccommodationsImagePath,
-        zipCode: thirdAccommodationsZipCode,
-        addressName: thirdAccommodationsAddressName,
-        districtName: thirdAccommodationsDistrictName,
-        addressNumber: thirdAccommodationsAddressNumber,
-        city: thirdAccommodationsCity,
-        singleRoom: thirdAccommodationsSingleRoom,
-        doubleRoom: thirdAccommodationsDoubleRoom,
-        doubleBedroom: thirdAccommodationsDoubleBedroom,
-        dormRoom: thirdAccommodationsDormRoom,
-        breakfast: thirdAccommodationsBreakfast,
-        lunch: thirdAccommodationsLunch,
-        dinner: thirdAccommodationsDinner,
-        wifi: thirdAccommodationsWifi,
-        petFriendly: thirdAccommodationsPetFriendly,
-        parking: thirdAccommodationsParking,
-        gyn: thirdAccommodationsGyn,
-        pool: thirdAccommodationsPool,
-        onSiteRestaurants: thirdAccommodationsOnSiteRestaurants,
-        nearbyRestaurants: thirdAccommodationsNearbyRestaurants,
-        roomService: thirdAccommodationsRoomService,
-        transportService: thirdAccommodationsTransportService,
-        childrensArea: thirdAccommodationsChildrensArea,
+        id: fourthAccommodationsId,
+        isActive: fourthAccommodationsStatus,
+        name: fourthAccommodationsName,
+        description: fourthAccommodationsDescription,
+        dailyValue: fourthAccommodationsDailyValue,
+        imagePath: fourthAccommodationsImagePath,
+        zipCode: fourthAccommodationsZipCode,
+        addressName: fourthAccommodationsAddressName,
+        districtName: fourthAccommodationsDistrictName,
+        addressNumber: fourthAccommodationsAddressNumber,
+        city: fourthAccommodationsCity,
+        singleRoom: fourthAccommodationsSingleRoom,
+        doubleRoom: fourthAccommodationsDoubleRoom,
+        doubleBedroom: fourthAccommodationsDoubleBedroom,
+        dormRoom: fourthAccommodationsDormRoom,
+        breakfast: fourthAccommodationsBreakfast,
+        lunch: fourthAccommodationsLunch,
+        dinner: fourthAccommodationsDinner,
+        wifi: fourthAccommodationsWifi,
+        petFriendly: fourthAccommodationsPetFriendly,
+        parking: fourthAccommodationsParking,
+        gyn: fourthAccommodationsGyn,
+        pool: fourthAccommodationsPool,
+        onSiteRestaurants: fourthAccommodationsOnSiteRestaurants,
+        nearbyRestaurants: fourthAccommodationsNearbyRestaurants,
+        roomService: fourthAccommodationsRoomService,
+        transportService: fourthAccommodationsTransportService,
+        childrensArea: fourthAccommodationsChildrensArea,
         createdAt: new Date(),
       },
     }),
 
-    prisma.accommodation.create({
-      data: {
-        id: randomUUID(),
-        isActive: thirdAccommodationsStatus,
-        name: thirdAccommodationsName,
-        description: thirdAccommodationsDescription,
-        dailyValue: thirdAccommodationsDailyValue,
-        imagePath: thirdAccommodationsImagePath,
-        zipCode: thirdAccommodationsZipCode,
-        addressName: thirdAccommodationsAddressName,
-        districtName: thirdAccommodationsDistrictName,
-        addressNumber: thirdAccommodationsAddressNumber,
-        city: thirdAccommodationsCity,
-        singleRoom: thirdAccommodationsSingleRoom,
-        doubleRoom: thirdAccommodationsDoubleRoom,
-        doubleBedroom: thirdAccommodationsDoubleBedroom,
-        dormRoom: thirdAccommodationsDormRoom,
-        breakfast: thirdAccommodationsBreakfast,
-        lunch: thirdAccommodationsLunch,
-        dinner: thirdAccommodationsDinner,
-        wifi: thirdAccommodationsWifi,
-        petFriendly: thirdAccommodationsPetFriendly,
-        parking: thirdAccommodationsParking,
-        gyn: thirdAccommodationsGyn,
-        pool: thirdAccommodationsPool,
-        onSiteRestaurants: thirdAccommodationsOnSiteRestaurants,
-        nearbyRestaurants: thirdAccommodationsNearbyRestaurants,
-        roomService: thirdAccommodationsRoomService,
-        transportService: thirdAccommodationsTransportService,
-        childrensArea: thirdAccommodationsChildrensArea,
-        createdAt: new Date(),
-      },
-    }),
   ])
 
   // itinerary
@@ -631,6 +661,22 @@ async function run() {
         createdAt: new Date(),
       },
     }),
+
+    prisma.itinerary.create({
+      data: {
+        id: fourthItineraryId,
+        isActive: fourthItineraryStatus,
+        name: fourthItineraryName,
+        numberOfDays: fourthItineraryNumberOfDays,
+        description: fourthItineraryDescription,
+        valuePerPerson: fourthItineraryValuePerPerson,
+        content: fourthItineraryContent,
+        classification: fourthItineraryClassification,
+        categoryId: fourthItineraryCategoryId,
+        accommodationId: fourthItineraryAccommodationId,
+        createdAt: new Date(),
+      },
+    }),
   ])
 
   // package
@@ -658,6 +704,30 @@ async function run() {
         createdAt: new Date(),
       },
     }),
+
+    prisma.package.create({
+      data: {
+        id: thirdPackageId,
+        isActive: thirdPackageIsActive,
+        name: thirdPackageName,
+        transferParticular: thirdPackageTransferParticular,
+        transferExclusive: thirdPackageTransferExclusive,
+        transferShared: thirdPackageTransferShared,
+        createdAt: new Date(),
+      },
+    }),
+
+    prisma.package.create({
+      data: {
+        id: fourthPackageId,
+        isActive: fourthPackageIsActive,
+        name: fourthPackageName,
+        transferParticular: fourthPackageTransferParticular,
+        transferExclusive: fourthPackageTransferExclusive,
+        transferShared: fourthPackageTransferShared,
+        createdAt: new Date(),
+      },
+    }),
   ])
 
   // itinerariesOnPackages
@@ -674,7 +744,7 @@ async function run() {
     prisma.itinerariesOnPackages.create({
       data: {
         id: secondItinerariesOnPackages,
-        packageId: firstPackageId,
+        packageId: secondPackageId,
         itineraryId: secondItineraryId,
         createdAt: new Date(),
       },
@@ -683,8 +753,8 @@ async function run() {
     prisma.itinerariesOnPackages.create({
       data: {
         id: thirdItinerariesOnPackages,
-        packageId: secondPackageId,
-        itineraryId: firstItineraryId,
+        packageId: thirdPackageId,
+        itineraryId: thirdItineraryId,
         createdAt: new Date(),
       },
     }),
@@ -692,8 +762,8 @@ async function run() {
     prisma.itinerariesOnPackages.create({
       data: {
         id: fourthItinerariesOnPackages,
-        packageId: secondPackageId,
-        itineraryId: thirdItineraryId,
+        packageId: fourthPackageId,
+        itineraryId: fourthItineraryId,
         createdAt: new Date(),
       },
     }),
