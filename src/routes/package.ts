@@ -63,15 +63,7 @@ export async function packageRoutes(app: FastifyInstance) {
         itineraries: {
           include: {
             itinerary: {
-              select: {
-                name: true,
-                numberOfDays: true,
-                category: {
-                  select: {
-                    id: true,
-                    name: true,
-                  },
-                },
+              include: {
                 accommodation: true,
               },
             },
@@ -214,7 +206,7 @@ export async function packageRoutes(app: FastifyInstance) {
     }
   })
 
-  // // route delete package
+  // route delete package
   app.delete('/packages/:id', async (request, reply) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),

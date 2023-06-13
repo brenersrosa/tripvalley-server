@@ -83,6 +83,7 @@ const firstAccommodationsZipCode = '12605-000'
 const firstAccommodationsAddressName = 'Rua 1'
 const firstAccommodationsDistrictName = 'Bairro A'
 const firstAccommodationsAddressNumber = '100'
+const firstAccommodationsUf = 'SP'
 const firstAccommodationsCity = 'Cidade X'
 const firstAccommodationsSingleRoom = true
 const firstAccommodationsDoubleRoom = true
@@ -114,6 +115,7 @@ const secondAccommodationsZipCode = '12605-000'
 const secondAccommodationsAddressName = 'Rua 2'
 const secondAccommodationsDistrictName = 'Bairro B'
 const secondAccommodationsAddressNumber = '300'
+const secondAccommodationsUf = 'SP'
 const secondAccommodationsCity = 'Cidade Y'
 const secondAccommodationsSingleRoom = true
 const secondAccommodationsDoubleRoom = true
@@ -145,6 +147,7 @@ const thirdAccommodationsZipCode = '12605-000'
 const thirdAccommodationsAddressName = 'Rua 3'
 const thirdAccommodationsDistrictName = 'Bairro C'
 const thirdAccommodationsAddressNumber = '700'
+const thirdAccommodationsUf = 'RJ'
 const thirdAccommodationsCity = 'Cidade Z'
 const thirdAccommodationsSingleRoom = true
 const thirdAccommodationsDoubleRoom = true
@@ -423,6 +426,7 @@ async function run() {
         addressName: firstAccommodationsAddressName,
         districtName: firstAccommodationsDistrictName,
         addressNumber: firstAccommodationsAddressNumber,
+        uf: firstAccommodationsUf,
         city: firstAccommodationsCity,
         singleRoom: firstAccommodationsSingleRoom,
         doubleRoom: firstAccommodationsDoubleRoom,
@@ -457,6 +461,7 @@ async function run() {
         addressName: secondAccommodationsAddressName,
         districtName: secondAccommodationsDistrictName,
         addressNumber: secondAccommodationsAddressNumber,
+        uf: secondAccommodationsUf,
         city: secondAccommodationsCity,
         singleRoom: secondAccommodationsSingleRoom,
         doubleRoom: secondAccommodationsDoubleRoom,
@@ -491,74 +496,7 @@ async function run() {
         addressName: thirdAccommodationsAddressName,
         districtName: thirdAccommodationsDistrictName,
         addressNumber: thirdAccommodationsAddressNumber,
-        city: thirdAccommodationsCity,
-        singleRoom: thirdAccommodationsSingleRoom,
-        doubleRoom: thirdAccommodationsDoubleRoom,
-        doubleBedroom: thirdAccommodationsDoubleBedroom,
-        dormRoom: thirdAccommodationsDormRoom,
-        breakfast: thirdAccommodationsBreakfast,
-        lunch: thirdAccommodationsLunch,
-        dinner: thirdAccommodationsDinner,
-        wifi: thirdAccommodationsWifi,
-        petFriendly: thirdAccommodationsPetFriendly,
-        parking: thirdAccommodationsParking,
-        gyn: thirdAccommodationsGyn,
-        pool: thirdAccommodationsPool,
-        onSiteRestaurants: thirdAccommodationsOnSiteRestaurants,
-        nearbyRestaurants: thirdAccommodationsNearbyRestaurants,
-        roomService: thirdAccommodationsRoomService,
-        transportService: thirdAccommodationsTransportService,
-        childrensArea: thirdAccommodationsChildrensArea,
-        createdAt: new Date(),
-      },
-    }),
-
-    prisma.accommodation.create({
-      data: {
-        id: randomUUID(),
-        isActive: thirdAccommodationsStatus,
-        name: thirdAccommodationsName,
-        description: thirdAccommodationsDescription,
-        dailyValue: thirdAccommodationsDailyValue,
-        imagePath: thirdAccommodationsImagePath,
-        zipCode: thirdAccommodationsZipCode,
-        addressName: thirdAccommodationsAddressName,
-        districtName: thirdAccommodationsDistrictName,
-        addressNumber: thirdAccommodationsAddressNumber,
-        city: thirdAccommodationsCity,
-        singleRoom: thirdAccommodationsSingleRoom,
-        doubleRoom: thirdAccommodationsDoubleRoom,
-        doubleBedroom: thirdAccommodationsDoubleBedroom,
-        dormRoom: thirdAccommodationsDormRoom,
-        breakfast: thirdAccommodationsBreakfast,
-        lunch: thirdAccommodationsLunch,
-        dinner: thirdAccommodationsDinner,
-        wifi: thirdAccommodationsWifi,
-        petFriendly: thirdAccommodationsPetFriendly,
-        parking: thirdAccommodationsParking,
-        gyn: thirdAccommodationsGyn,
-        pool: thirdAccommodationsPool,
-        onSiteRestaurants: thirdAccommodationsOnSiteRestaurants,
-        nearbyRestaurants: thirdAccommodationsNearbyRestaurants,
-        roomService: thirdAccommodationsRoomService,
-        transportService: thirdAccommodationsTransportService,
-        childrensArea: thirdAccommodationsChildrensArea,
-        createdAt: new Date(),
-      },
-    }),
-
-    prisma.accommodation.create({
-      data: {
-        id: randomUUID(),
-        isActive: thirdAccommodationsStatus,
-        name: thirdAccommodationsName,
-        description: thirdAccommodationsDescription,
-        dailyValue: thirdAccommodationsDailyValue,
-        imagePath: thirdAccommodationsImagePath,
-        zipCode: thirdAccommodationsZipCode,
-        addressName: thirdAccommodationsAddressName,
-        districtName: thirdAccommodationsDistrictName,
-        addressNumber: thirdAccommodationsAddressNumber,
+        uf: thirdAccommodationsUf,
         city: thirdAccommodationsCity,
         singleRoom: thirdAccommodationsSingleRoom,
         doubleRoom: thirdAccommodationsDoubleRoom,

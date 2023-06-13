@@ -118,6 +118,7 @@ model Accommodation {
   addressName       String
   districtName      String
   addressNumber     String
+  uf                String
   city              String
   singleRoom        Boolean
   doubleRoom        Boolean

@@ -15,6 +15,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
       addressName: z.string(),
       districtName: z.string(),
       addressNumber: z.string(),
+      uf: z.string(),
       city: z.string(),
       singleRoom: z.boolean().default(false),
       doubleRoom: z.boolean().default(false),
@@ -45,6 +46,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
       addressName,
       districtName,
       addressNumber,
+      uf,
       city,
       singleRoom,
       doubleRoom,
@@ -77,6 +79,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
           addressName,
           districtName,
           addressNumber,
+          uf,
           city,
           singleRoom,
           doubleRoom,
@@ -107,14 +110,19 @@ export async function accommodationRoutes(app: FastifyInstance) {
   })
 
   // route get all accommodations
-  app.get('/accommodations', async (request) => {
-    const accommodations = await prisma.accommodation.findMany({
-      orderBy: {
-        createdAt: 'desc',
-      },
-    })
+  app.get('/accommodations', async (request, reply) => {
+    try {
+      const accommodations = await prisma.accommodation.findMany({
+        orderBy: {
+          createdAt: 'desc',
+        },
+      })
 
-    return accommodations
+      reply.send(accommodations)
+    } catch (error) {
+      console.error(error)
+      reply.status(500).send({ error: 'Internal Server Error' })
+    }
   })
 
   // route get one accommodation by id
@@ -152,6 +160,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
       addressName: z.string(),
       districtName: z.string(),
       addressNumber: z.string(),
+      uf: z.string(),
       city: z.string(),
       singleRoom: z.boolean().default(false),
       doubleRoom: z.boolean().default(false),
@@ -182,6 +191,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
       addressName,
       districtName,
       addressNumber,
+      uf,
       city,
       singleRoom,
       doubleRoom,
@@ -217,6 +227,7 @@ export async function accommodationRoutes(app: FastifyInstance) {
           addressName,
           districtName,
           addressNumber,
+          uf,
           city,
           singleRoom,
           doubleRoom,
