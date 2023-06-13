@@ -220,10 +220,12 @@ const thirdItineraryAccommodationId = thirdAccommodationsId
 const firstPackageId = randomUUID()
 const firstPackageIsActive = 'active'
 const firstPackageName = 'Pacote 1'
+const firstPackageDescription =
+  'Desfrute de dias ensolarados, águas cristalinas e areias douradas na Travessia das Sete Praias!'
 const firstPackageImagePath =
   'https://images.pexels.com/photos/15020130/pexels-photo-15020130/free-photo-of-penhasco-abismo-crescendo-aumentando.jpeg'
-const firstPackageDescription =
-  "Desfrute de dias ensolarados, águas cristalinas e areias douradas na Travessia das Sete Praias!"
+const firstDepartureDate = '2023-07-13T03:00:00.000Z'
+const firstBackDate = '2023-07-18T03:00:00.000Z'
 const firstPackageTransferParticular = true
 const firstPackageTransferExclusive = true
 const firstPackageTransferShared = true
@@ -231,10 +233,12 @@ const firstPackageTransferShared = true
 const secondPackageId = randomUUID()
 const secondPackageIsActive = 'active'
 const secondPackageName = 'Pacote 2'
-const secondPackageImagePath =
-  'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
 const secondPackageDescription =
   "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+const secondPackageImagePath =
+  'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
+const secondDepartureDate = '2023-07-13T03:00:00.000Z'
+const secondBackDate = '2023-07-21T03:00:00.000Z'
 const secondPackageTransferParticular = false
 const secondPackageTransferExclusive = false
 const secondPackageTransferShared = true
@@ -586,8 +590,10 @@ async function run() {
         id: firstPackageId,
         isActive: firstPackageIsActive,
         name: firstPackageName,
-        imagePath: firstPackageImagePath,
         description: firstPackageDescription,
+        imagePath: firstPackageImagePath,
+        departureDate: firstDepartureDate,
+        backDate: firstBackDate,
         transferParticular: firstPackageTransferParticular,
         transferExclusive: firstPackageTransferExclusive,
         transferShared: firstPackageTransferShared,
@@ -600,8 +606,10 @@ async function run() {
         id: secondPackageId,
         isActive: secondPackageIsActive,
         name: secondPackageName,
-        imagePath: secondPackageImagePath,
         description: secondPackageDescription,
+        imagePath: secondPackageImagePath,
+        departureDate: secondDepartureDate,
+        backDate: secondBackDate,
         transferParticular: secondPackageTransferParticular,
         transferExclusive: secondPackageTransferExclusive,
         transferShared: secondPackageTransferShared,

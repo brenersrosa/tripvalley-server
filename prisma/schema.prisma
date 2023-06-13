@@ -147,11 +147,13 @@ model Accommodation {
 }
 
 model Package {
-  id                 String  @id @default(uuid())
+  id                 String   @id @default(uuid())
   isActive           Status
   name               String
-  imagePath          String
   description        String
+  imagePath          String
+  departureDate      DateTime
+  backDate           DateTime
   transferParticular Boolean
   transferExclusive  Boolean
   transferShared     Boolean
