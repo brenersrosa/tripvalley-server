@@ -8,6 +8,8 @@ export async function packageRoutes(app: FastifyInstance) {
     const bodySchema = z.object({
       isActive: z.enum(['active', 'inactive']).default('active'),
       name: z.string(),
+      imagePath: z.string(),
+      description: z.string(),
       transferParticular: z.boolean().default(false),
       transferExclusive: z.boolean().default(false),
       transferShared: z.boolean().default(false),
@@ -17,6 +19,8 @@ export async function packageRoutes(app: FastifyInstance) {
     const {
       isActive,
       name,
+      imagePath,
+      description,
       transferParticular,
       transferExclusive,
       transferShared,
@@ -30,6 +34,8 @@ export async function packageRoutes(app: FastifyInstance) {
         data: {
           isActive,
           name,
+          imagePath,
+          description,
           transferParticular,
           transferExclusive,
           transferShared,
@@ -115,6 +121,8 @@ export async function packageRoutes(app: FastifyInstance) {
     const bodySchema = z.object({
       isActive: z.enum(['active', 'inactive']).default('active'),
       name: z.string(),
+      imagePath: z.string(),
+      description: z.string(),
       transferParticular: z.boolean(),
       transferExclusive: z.boolean(),
       transferShared: z.boolean(),
@@ -137,6 +145,8 @@ export async function packageRoutes(app: FastifyInstance) {
     const {
       isActive,
       name,
+      imagePath,
+      description,
       transferParticular,
       transferExclusive,
       transferShared,
@@ -151,6 +161,8 @@ export async function packageRoutes(app: FastifyInstance) {
         data: {
           isActive,
           name,
+          imagePath,
+          description,
           transferParticular,
           transferExclusive,
           transferShared,
