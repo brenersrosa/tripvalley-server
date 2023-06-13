@@ -61,6 +61,10 @@ export async function itineraryRoutes(app: FastifyInstance) {
       orderBy: {
         createdAt: 'desc',
       },
+      include: {
+        accommodation: true,
+        category: true,
+      },
     })
 
     return itineraries
