@@ -13,9 +13,6 @@ export async function itineraryRoutes(app: FastifyInstance) {
       valuePerPerson: z.number(),
       content: z.array(z.string()),
       classification: z.array(z.string()),
-      transferParticular: z.boolean().default(false),
-      transferExclusive: z.boolean().default(false),
-      transferShared: z.boolean().default(false),
       categoryId: z.string().uuid(),
       accommodationId: z.string().uuid(),
     })
