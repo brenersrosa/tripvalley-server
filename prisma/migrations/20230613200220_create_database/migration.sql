@@ -118,6 +118,7 @@ CREATE TABLE `packages` (
     `id` VARCHAR(191) NOT NULL,
     `isActive` ENUM('active', 'inactive') NOT NULL,
     `name` VARCHAR(191) NOT NULL,
+    `description` VARCHAR(191) NOT NULL,
     `transferParticular` BOOLEAN NOT NULL,
     `transferExclusive` BOOLEAN NOT NULL,
     `transferShared` BOOLEAN NOT NULL,

@@ -150,6 +150,7 @@ model Package {
   id                 String  @id @default(uuid())
   isActive           Status
   name               String
+  description        String
   transferParticular Boolean
   transferExclusive  Boolean
   transferShared     Boolean

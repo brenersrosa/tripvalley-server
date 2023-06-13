@@ -220,6 +220,8 @@ const thirdItineraryAccommodationId = thirdAccommodationsId
 const firstPackageId = randomUUID()
 const firstPackageIsActive = 'active'
 const firstPackageName = 'Pacote 1'
+const firstPackageDescription =
+  "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 const firstPackageTransferParticular = true
 const firstPackageTransferExclusive = true
 const firstPackageTransferShared = true
@@ -227,6 +229,8 @@ const firstPackageTransferShared = true
 const secondPackageId = randomUUID()
 const secondPackageIsActive = 'active'
 const secondPackageName = 'Pacote 2'
+const secondPackageDescription =
+  "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
 const secondPackageTransferParticular = false
 const secondPackageTransferExclusive = false
 const secondPackageTransferShared = true
@@ -578,6 +582,7 @@ async function run() {
         id: firstPackageId,
         isActive: firstPackageIsActive,
         name: firstPackageName,
+        description: firstPackageDescription,
         transferParticular: firstPackageTransferParticular,
         transferExclusive: firstPackageTransferExclusive,
         transferShared: firstPackageTransferShared,
@@ -590,6 +595,7 @@ async function run() {
         id: secondPackageId,
         isActive: secondPackageIsActive,
         name: secondPackageName,
+        description: secondPackageDescription,
         transferParticular: secondPackageTransferParticular,
         transferExclusive: secondPackageTransferExclusive,
         transferShared: secondPackageTransferShared,
