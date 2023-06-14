@@ -5,6 +5,7 @@ import fastify from 'fastify'
 
 import { accommodationRoutes } from './routes/accommodation'
 import { authRoutes } from './routes/auth'
+import { categoryRoutes } from './routes/category'
 import { itineraryRoutes } from './routes/itinerary'
 import { orderRoutes } from './routes/order'
 import { packageRoutes } from './routes/package'
@@ -20,6 +21,7 @@ app.register(jwt, {
 })
 
 app.register(authRoutes)
+app.register(categoryRoutes)
 app.register(itineraryRoutes)
 app.register(accommodationRoutes)
 app.register(packageRoutes)
