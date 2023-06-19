@@ -88,7 +88,7 @@ model Itinerary {
   isActive       Status
   name           String
   numberOfDays   Int
-  description    String
+  description    String  @db.LongText
   valuePerPerson Decimal
   content        Json
   classification Json
@@ -111,7 +111,7 @@ model Accommodation {
   id                String  @id @default(uuid())
   isActive          Status
   name              String
-  description       String
+  description       String  @db.LongText
   dailyValue        Decimal
   imagePath         String
   zipCode           String
@@ -150,7 +150,7 @@ model Package {
   id                 String   @id @default(uuid())
   isActive           Status
   name               String
-  description        String
+  description        String   @db.LongText
   imagePath          String
   departureDate      DateTime
   backDate           DateTime
