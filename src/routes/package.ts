@@ -125,27 +125,18 @@ export async function packageRoutes(app: FastifyInstance) {
     const { id } = paramsSchema.parse(request.params)
 
     const bodySchema = z.object({
-      isActive: z.enum(['active', 'inactive']).default('active'),
+      isActive: z.enum(['active', 'inactive']),
       name: z.string(),
       description: z.string(),
       imagePath: z.string(),
-      departureDate: z.date(),
-      backDate: z.date(),
+      departureDate: z.string().datetime(),
+      backDate: z.string().datetime(),
       transferParticular: z.boolean(),
       transferExclusive: z.boolean(),
       transferShared: z.boolean(),
       itineraries: z.array(
         z.object({
           id: z.string().uuid(),
-          isActive: z.enum(['active', 'inactive']).default('active'),
-          name: z.string(),
-          numberOfDays: z.number(),
-          description: z.string(),
-          valuePerPerson: z.number(),
-          content: z.array(z.string()),
-          classification: z.array(z.string()),
-          categoryId: z.string().uuid(),
-          accommodationId: z.string().uuid(),
         }),
       ),
     })
@@ -178,49 +169,20 @@ export async function packageRoutes(app: FastifyInstance) {
           transferParticular,
           transferExclusive,
           transferShared,
+          itineraries: {
+            updateMany: itineraries.map((itinerary) => ({
+              where: {
+                id: itinerary.id,
+              },
+              data: {},
+            })),
+          },
         },
       })
-
-      const itinerariesUpdate = await Promise.all(
-        itineraries.map(async (itinerary) => {
-          const {
-            id,
-            isActive,
-            name,
-            numberOfDays,
-            description,
-            valuePerPerson,
-            content,
-            classification,
-            categoryId,
-            accommodationId,
-          } = itinerary
-
-          const updatedItinerary = await prisma.itinerary.update({
-            where: {
-              id,
-            },
-            data: {
-              isActive,
-              name,
-              numberOfDays,
-              description,
-              valuePerPerson,
-              content,
-              classification,
-              categoryId,
-              accommodationId,
-            },
-          })
-
-          return updatedItinerary
-        }),
-      )
 
       return reply.status(200).send({
         message: 'Package and itineraries updated successfully.',
         package: packageUpdate,
-        itineraries: itinerariesUpdate,
       })
     } catch (error) {
       console.error('Error updating accommodation:', error)
