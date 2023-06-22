@@ -65,7 +65,7 @@ export async function packageRoutes(app: FastifyInstance) {
     }
   })
 
-  // route get all accommodations
+  // route get all packages
   app.get('/packages', async (request) => {
     const packages = await prisma.package.findMany({
       orderBy: {
@@ -87,7 +87,7 @@ export async function packageRoutes(app: FastifyInstance) {
     return packages
   })
 
-  // route get one accommodation by id
+  // route get one package by id
   app.get('/packages/:id', async (request) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),

@@ -84,10 +84,10 @@ const firstAccommodationsId = randomUUID()
 const firstAccommodationsStatus = 'active'
 const firstAccommodationsName = 'Aldeia da Lagoinha'
 const firstAccommodationsDescription =
-  'Apresentando WiFi gratuito em toda a propriedade, a Aldeia Da Lagoinha oferece acomodação em Ubatuba. A praia mais próxima fica a 300 m, e o estacionamento privativo gratuito também está disponível no local. Todos os quartos desta pousada dispõem de ar-condicionado e TV. Os quartos possuem banheiro privativo. Toalhas e lençóis são fornecidos por um custo adicional. Além disso, a propriedade oferece um lounge compartilhado. A Aldeia Da Lagoinha fica a 15 km da Praia Grande e a 16 km do Aquário de Ubatuba.'
+  'Apresentando WiFi gratuito em toda a propriedade, a Aldeia Da Lagoinha oferece acomodação em Ubatuba. A praia mais próxima fica a 300 m, e o estacionamento privativo gratuito também está disponível no local.'
 const firstAccommodationsDailyValue = 10.0
 const firstAccommodationsImagePath =
-  'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
+  'https://images.pexels.com/photos/59924/pexels-photo-59924.jpeg?auto=compress&cs=tinysrgb&w=2880&h=1622&dpr=1'
 const firstAccommodationsZipCode = '11680-000'
 const firstAccommodationsAddressName = 'Rua São Paulo'
 const firstAccommodationsDistrictName = 'Praia da Lagoinha'
@@ -116,10 +116,10 @@ const secondAccommodationsId = randomUUID()
 const secondAccommodationsStatus = 'active'
 const secondAccommodationsName = 'Chalés Ohana'
 const secondAccommodationsDescription =
-  'Ohana é uma família que brinda serviços de hospedagem na paradisíaca Praia da Fortaleza - Ubatuba/SP Localizada a apenas 60 metros da praia, é ideal para quem gosta do equilíbrio, paz e sossego. Nossos aconchegantes apartamentos oferecem todo o conforto necessário para proporcionar uma estadia perfeita aos nossos visitantes, com uma deslumbrante vista para a natureza, ao relaxante som das ondas do mar e canto dos pássaros. Um ambiente confortável, descontraído e em perfeita sintonia com a natureza.'
+  'Ohana é uma família que brinda serviços de hospedagem na paradisíaca Praia da Fortaleza - Ubatuba/SP\nLocalizada a apenas 60 metros da praia, é ideal para quem gosta do equilíbrio, paz e sossego.'
 const secondAccommodationsDailyValue = 20.0
 const secondAccommodationsImagePath =
-  'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
+  'https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=2880&h=1622&dpr=1'
 const secondAccommodationsZipCode = '12605-000'
 const secondAccommodationsAddressName = 'Rua Ilhas'
 const secondAccommodationsDistrictName = 'Praia da Fortaleza'
@@ -148,7 +148,7 @@ const thirdAccommodationsId = randomUUID()
 const thirdAccommodationsStatus = 'active'
 const thirdAccommodationsName = 'Dan Inn Campos do Jordão'
 const thirdAccommodationsDescription =
-  'Dispondo de uma piscina coberta, sauna e academia, o Dan Inn Campos do Jordão está situado a 1,7 km de Capivari e a 2,2 km de Belvedere. Para sua comodidade, o Wi-Fi em toda a propriedade e um estacionamento privativo no local estão disponíveis, ambos gratuitos. Todos os quartos deste hotel possuem ar-condicionado, aquecedor, TV de tela plana a cabo e banheiro privativo com produtos de banho de cortesia. No Dan Inn Premium, você pode saborear diariamente um buffet de café da manhã, que inclui uma variedade de frutas da estação, pães e frios, bem como uma seleção de bebidas.'
+  'Dispondo de uma piscina coberta, sauna e academia, o Dan Inn Campos do Jordão está situado a 1,7 km de Capivari e a 2,2 km de Belvedere. Para sua comodidade, o Wi-Fi em toda a propriedade e um estacionamento privativo no local estão disponíveis, ambos gratuitos.'
 const thirdAccommodationsDailyValue = 30.0
 const thirdAccommodationsImagePath =
   'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
@@ -180,10 +180,10 @@ const fourthAccommodationsId = randomUUID()
 const fourthAccommodationsStatus = 'active'
 const fourthAccommodationsName = 'Ramada Encore Cruzeiro'
 const fourthAccommodationsDescription =
-  'Dispondo de acomodações 3 estrelas, o Ramada Encore Cruzeiro está localizado em Cruzeiro, a 48 km da Estação Rodoviária de Aparecida e a 50 km do Santuário Nacional. Este hotel 3 estrelas dispõe de academia e quartos com ar-condicionado, Wi-Fi gratuito e banheiro privativo. Há um restaurante que serve cozinha americana, e o estacionamento privativo gratuito está disponível. Todos os quartos possuem guarda-roupa. Todas as unidades do Ramada Encore Cruzeiro estão equipadas com TV de tela plana e produtos de banho gratuitos.'
+  'Dispondo de acomodações 3 estrelas, o Ramada Encore Cruzeiro está localizado em Cruzeiro, a 48 km da Estação Rodoviária de Aparecida e a 50 km do Santuário Nacional. Este hotel 3 estrelas dispõe de academia e quartos com ar-condicionado, Wi-Fi gratuito e banheiro privativo.'
 const fourthAccommodationsDailyValue = 30.0
 const fourthAccommodationsImagePath =
-  'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
+  'https://images.pexels.com/photos/2403017/pexels-photo-2403017.jpeg?auto=compress&cs=tinysrgb&w=2880&h=1622&dpr=1'
 const fourthAccommodationsZipCode = '12701-350'
 const fourthAccommodationsAddressName = 'Rua Capitão Neco'
 const fourthAccommodationsDistrictName = 'Vila Ana Rosa Novaes'
@@ -212,10 +212,10 @@ const fifthAccommodationsId = randomUUID()
 const fifthAccommodationsStatus = 'active'
 const fifthAccommodationsName = 'Gran Continental Hotel Taubaté'
 const fifthAccommodationsDescription =
-  'Dispondo de restaurante e academia, o Gran Continental Hotel está localizado em Taubaté. A propriedade oferece Wi-Fi gratuito e um café da manhã continental de cortesia, servido diariamente. Apresentando vista da cidade e decorados em tons claros, os quartos incluem ar-condicionado, TV de tela plana a cabo, frigobar e banheiros privativos com chuveiro, secador de cabelo e produtos de banho de cortesia. Algumas suítes também estão equipadas com banheira de hidromassagem. Além disso, o Gran Continental Hotel conta com sauna compartilhada, banheira de hidromassagem, recepção 24 horas, lounge de uso comum, depósito para bagagem e estacionamento gratuito.'
+  'Dispondo de restaurante e academia, o Gran Continental Hotel está localizado em Taubaté. A propriedade oferece Wi-Fi gratuito e um café da manhã continental de cortesia, servido diariamente.'
 const fifthAccommodationsDailyValue = 30.0
 const fifthAccommodationsImagePath =
-  'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
+  'https://images.pexels.com/photos/2878785/pexels-photo-2878785.jpeg?auto=compress&cs=tinysrgb&w=2880&h=1622&dpr=1'
 const fifthAccommodationsZipCode = '12030-000'
 const fifthAccommodationsAddressName = 'Rua Dr. Emilio Winther'
 const fifthAccommodationsDistrictName = 'Jardim das Nações'
@@ -244,10 +244,10 @@ const sixthAccommodationsId = randomUUID()
 const sixthAccommodationsStatus = 'active'
 const sixthAccommodationsName = 'Summit GranVale Hotel'
 const sixthAccommodationsDescription =
-  'O Summit granvale Hotel dispõe de piscina ao ar livre e banheira de hidromassagem. O Wi-Fi gratuito está disponível em toda a propriedade e o estacionamento privativo de cortesia é fornecido no local. Todos os quartos estão equipados com TV de tela plana a cabo, ar-condicionado e portas com isolamento acústico. Você pode desfrutar de um restaurante no local com cozinha internacional, bar, sauna e academia.'
+  'O Summit granvale Hotel dispõe de piscina ao ar livre e banheira de hidromassagem. O Wi-Fi gratuito está disponível em toda a propriedade e o estacionamento privativo de cortesia é fornecido no local.'
 const sixthAccommodationsDailyValue = 30.0
 const sixthAccommodationsImagePath =
-  'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
+  'https://images.pexels.com/photos/1771832/pexels-photo-1771832.jpeg?auto=compress&cs=tinysrgb&w=2880&h=1622&dpr=1'
 const sixthAccommodationsZipCode = '12284-060'
 const sixthAccommodationsAddressName = 'Rua João Benedito Moreira'
 const sixthAccommodationsDistrictName = 'Jardim Maria Cândida'
@@ -276,10 +276,10 @@ const seventhAccommodationsId = randomUUID()
 const seventhAccommodationsStatus = 'active'
 const seventhAccommodationsName = 'Hotel Faenician'
 const seventhAccommodationsDescription =
-  'O Faenician Aparecida fica a apenas 20 m da Basílica Nova e da Passarela da Fé. A propriedade oferece quartos com ar-condicionado e um variado buffet de café da manhã. Para a sua maior comodidade, o Wi-Fi é gratuito. Os quartos são práticos e contam com frigobar, TV e ventilador de teto. Todas as acomodações incluem banheiro privativo com chuveiro. O Hotel Faenician Aparecida fica a apenas 1 km do Morro do Cruzeiro e a 850 m da Estação Rodoviária da cidade. Há um estacionamento privativo gratuito a 2 minutos a pé do hotel.'
+  'O Faenician Aparecida fica a apenas 20 m da Basílica Nova e da Passarela da Fé. A propriedade oferece quartos com ar-condicionado e um variado buffet de café da manhã. Para a sua maior comodidade, o Wi-Fi é gratuito.'
 const seventhAccommodationsDailyValue = 30.0
 const seventhAccommodationsImagePath =
-  'https://images.pexels.com/photos/6077368/pexels-photo-6077368.jpeg?auto=compress&cs=tinysrgb&w=640&h=427&dpr=1'
+  'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=2880&h=1622&dpr=1'
 const seventhAccommodationsZipCode = '12570-000'
 const seventhAccommodationsAddressName = 'Rua Vicente Pasin'
 const seventhAccommodationsDistrictName = 'Santa Rita'
@@ -335,7 +335,7 @@ const thirdItineraryStatus = 'active'
 const thirdItineraryName = 'Conhecendo Campos do Jordão'
 const thirdItineraryNumberOfDays = 8
 const thirdItineraryDescription =
-  'Algumas vezes chamada de "Suíça do Brasil", a cidade de Campos do Jordão, perto de São Paulo, oferece arquitetura no estilo chalé e cozinha alemã e suíça. Esta excursão  é para os viajantes que desejam explorar a história, a arquitetura e o artesanato neste enclave da cultura suíça e apreciar a zona rural circundante, durante uma curta caminhada e uma visita à cachoeira.'
+  'Algumas vezes chamada de "Suíça do Brasil", a cidade de Campos do Jordão, perto de São Paulo, oferece arquitetura no estilo chalé e cozinha alemã e suíça.'
 const thirdItineraryValuePerPerson = 20
 const thirdItineraryContent = [
   'Transporte com ar-condicionado',
@@ -351,7 +351,7 @@ const fourthItineraryStatus = 'active'
 const fourthItineraryName = 'Principais pontos turísticos de Cruzeiro'
 const fourthItineraryNumberOfDays = 3
 const fourthItineraryDescription =
-  'A jornada começa no Museu Major Novaes, onde você será transportado de volta no tempo através de exposições fascinantes, fotografias e artefatos que contam a história da região.z Em seguida, visitará o charmoso Centro Histórico de Cruzeiro, com suas ruas pitorescas e casarões preservados. Admire a arquitetura colonial e aprecie a atmosfera nostálgica enquanto explora as lojas de artesanato local e os cafés tradicionais. Uma parada imperdível é o Santuário de Nossa Senhora da Conceição, um dos principais pontos de peregrinação da região. Após, Descubra a bela igreja construída no século XVIII e mergulhe na espiritualidade e devoção que envolve a cidade.'
+  'A jornada começa no Museu Major Novaes, onde você será transportado de volta no tempo através de exposições fascinantes, fotografias e artefatos que contam a história da região.'
 const fourthItineraryValuePerPerson = 20
 const fourthItineraryContent = ['Transporte com wi-fi', 'Guia local']
 const fourthItineraryClassification = [
@@ -367,7 +367,7 @@ const fifthItineraryStatus = 'active'
 const fifthItineraryName = 'Lugares para conhecer em Taubaté'
 const fifthItineraryNumberOfDays = 5
 const fifthItineraryDescription =
-  'Além de ser considerada o segundo maior polo industrial da região, a cidade de Taubaté também é conhecida por ser base de grandes empresas e por seu vasto patrimônio cultural, já que abriga mais de dez museus. Entre seus residentes mais célebres é possível citar: Monteiro Lobato, Amácio Mazzaropi, Yara Salles, Tony Campelo e Cid Moreira.'
+  'Além de ser considerada o segundo maior polo industrial da região, a cidade de Taubaté também é conhecida por ser base de grandes empresas e por seu vasto patrimônio cultural.'
 const fifthItineraryValuePerPerson = 20
 const fifthItineraryContent = [
   'Transporte com wi-fi',
@@ -386,7 +386,7 @@ const sixthItineraryStatus = 'active'
 const sixthItineraryName = 'Explore Caçapava'
 const sixthItineraryNumberOfDays = 5
 const sixthItineraryDescription =
-  'Apesar de pequena, Caçapava se destaca por sediar uma das maiores festas juninas do estado de São Paulo, por ter uma igreja bicentenária, uma fantástica fábrica de chocolates e até um museu com um carro que foi usado pela família real britânica. Outro ponto a ser destacado é seu, injustamente pouco conhecido, museu contendo ricas informações da FEB durante a segund guerra mundial, o 6º Batalhão de Infantaria do Museu do Ipiranga'
+  'Apesar de pequena, Caçapava se destaca por sediar uma das maiores festas juninas do estado de São Paulo, por ter uma igreja bicentenária, uma fantástica fábrica de chocolates e até um museu com um carro que foi usado pela família real britânica.'
 const sixthItineraryValuePerPerson = 20
 const sixthItineraryContent = ['Seguro', 'Guia local']
 const sixthItineraryClassification = [
@@ -402,7 +402,7 @@ const seventhItineraryStatus = 'active'
 const seventhItineraryName = 'Visitando a fé em Aparecida'
 const seventhItineraryNumberOfDays = 2
 const seventhItineraryDescription =
-  'Aparecida, um destino sagrado e inspirador que atrai milhões de visitantes todos os anos. Localizada no estado de São Paulo, Aparecida é conhecida mundialmente como o lar da Basílica de Nossa Senhora Aparecida, considerada a maior basílica católica do mundo e um importante centro de peregrinação. Neste pacote turístico, você terá a oportunidade de explorar o Santuário Nacional de Nossa Senhora Aparecida, um local de devoção e fé que cativa os corações de fiéis e curiosos. Visite a Basílica Nova, uma imponente estrutura arquitetônica que abriga a imagem de Nossa Senhora Aparecida e oferece espaço para oração e reflexão. Explore o Altar Central, com seus belos vitrais e detalhes intricados, e participe de uma missa ou momento de contemplação.'
+  'Aparecida, um destino sagrado e inspirador que atrai milhões de visitantes todos os anos. Localizada no estado de São Paulo, Aparecida é conhecida mundialmente como o lar da Basílica de Nossa Senhora Aparecida.'
 const seventhItineraryValuePerPerson = 20
 const seventhItineraryContent = ['Transporte com wi-fi', 'Guia local']
 const seventhItineraryClassification = [
@@ -417,9 +417,9 @@ const seventhItineraryAccommodationId = seventhAccommodationsId
 // #region packages
 const firstPackageId = randomUUID()
 const firstPackageIsActive = 'active'
-const firstPackageName = 'Travessia das Sete Praias - Ubatuba'
+const firstPackageName = 'Travessia das Sete Praias'
 const firstPackageDescription =
-  'A Travessia das Sete Praias de Ubatuba é uma aventura inesquecível para os amantes do ecoturismo e da natureza. Ao longo do caminho, você poderá desfrutar de algumas das mais belas paisagens naturais da região sul de Ubatuba, como a Praia da Fortaleza, a Praia do Cedro, o Costão Rochoso, e muitas outras. Cada praia tem sua própria personalidade, mas todas elas têm algo em comum: a beleza inigualável da natureza que as cerca.'
+  'A Travessia das Sete Praias de Ubatuba é uma aventura inesquecível para os amantes do ecoturismo e da natureza. Ao longo do caminho, você poderá desfrutar de algumas das mais belas paisagens naturais da região sul de Ubatuba.'
 const firstPackageImagePath =
   'https://images.pexels.com/photos/14664861/pexels-photo-14664861.jpeg'
 const firstDepartureDate = '2023-07-13T03:00:00.000Z'
@@ -430,9 +430,9 @@ const firstPackageTransferShared = true
 
 const secondPackageId = randomUUID()
 const secondPackageIsActive = 'active'
-const secondPackageName = 'Conheça a Suíça Brasileira - Campos do Jordão'
+const secondPackageName = 'Conheça a Suíça Brasileira'
 const secondPackageDescription =
-  'Descubra a “Suíça brasileira” nesta abrangente viagem. Aproveite o passeio panorâmico pela região até chegarmos à pacata cidade de Campos do Jordão, situada a 1700m acima do nível do mar. Linda o ano todo, há muito para explorar. Com natureza, história e inúmeras feiras e fábricas, é parada obrigatória para quem visita São Paulo.'
+  'Descubra a “Suíça brasileira” nesta abrangente viagem. Aproveite o passeio panorâmico pela região até chegarmos à pacata cidade de Campos do Jordão.'
 const secondPackageImagePath =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Pórtico_de_Campos_do_Jordão.jpg/2560px-Pórtico_de_Campos_do_Jordão.jpg'
 const secondDepartureDate = '2023-07-13T03:00:00.000Z'
@@ -443,9 +443,9 @@ const secondPackageTransferShared = true
 
 const thirdPackageId = randomUUID()
 const thirdPackageIsActive = 'active'
-const thirdPackageName = 'Viagem pela história - Cruzeiro'
+const thirdPackageName = 'Viagem pela história'
 const thirdPackageDescription =
-  'Descubra a encantadora cidade de Cruzeiro e mergulhe em sua rica história com nosso pacote de viagem exclusivo. Localizada no Vale do Paraíba, Cruzeiro é um tesouro histórico que cativa os viajantes com seus marcos fascinantes e atmosfera acolhedora. Durante sua estadia, você terá a oportunidade de explorar pontos turísticos históricos que narram a trajetória dessa cidade encantadora.'
+  'Descubra a encantadora cidade de Cruzeiro e mergulhe em sua rica história com nosso pacote de viagem exclusivo. Localizada no Vale do Paraíba, Cruzeiro é um tesouro histórico que cativa os viajantes com seus marcos fascinantes e atmosfera acolhedora.'
 const thirdPackageImagePath =
   'https://upload.wikimedia.org/wikipedia/commons/4/4f/Pico_da_Gomeira_Serra_da_Mantiqueira_January_2014.jpg'
 const thirdDepartureDate = '2023-07-13T03:00:00.000Z'
@@ -458,7 +458,7 @@ const fourthPackageId = randomUUID()
 const fourthPackageIsActive = 'active'
 const fourthPackageName = 'Rios do Vale'
 const fourthPackageDescription =
-  'Desfrute da hospitalidade oferecida pelas carismáticas cidades do Vale do Paraíba que compõe a região turística Rios do Vale e conheça um pouco mais de suas histórias e culturas. Este pacote abrange Taubaté e Caçapava, duas cidades charmosas e acolhedoras, com passados recheados de história e, é claro, uma encantadora população.'
+  'Desfrute da hospitalidade oferecida pelas carismáticas cidades do Vale do Paraíba que compõe a região turística Rios do Vale e conheça um pouco mais de suas histórias e culturas.'
 const fourthPackageImagePath =
   'https://images.pexels.com/photos/2519390/pexels-photo-2519390.jpeg?auto=compress&cs=tinysrgb&w=2880&h=1622&dpr=1'
 const fourthDepartureDate = '2023-07-13T03:00:00.000Z'
@@ -469,9 +469,9 @@ const fourthPackageTransferShared = true
 
 const fifthPackageId = randomUUID()
 const fifthPackageIsActive = 'active'
-const fifthPackageName = 'Tour da Fé - Aparecida'
+const fifthPackageName = 'Tour da Fé'
 const fifthPackageDescription =
-  'A basílica de Nossa Senhora Aparecida, a Canção Nova e os locais dedicados a Frei Galvão, o primeiro santo brasileiro, são destaques do circuito turístico religioso. Mas outros atrativos também encantam quem percorre curtas ou longas distâncias para reafirmar sua fé. Além das atrações religiosas, a cidade de Aparecida oferece opções de turismo histórico, ecológico e cultural.'
+  'A basílica de Nossa Senhora Aparecida, a Canção Nova e os locais dedicados a Frei Galvão, o primeiro santo brasileiro, são destaques do circuito turístico religioso.'
 const fifthPackageImagePath =
   'https://images.pexels.com/photos/12990351/pexels-photo-12990351.jpeg?w=2880&h=1620'
 const fifthDepartureDate = '2023-07-13T03:00:00.000Z'

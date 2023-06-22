@@ -81,7 +81,12 @@ export async function authRoutes(app: FastifyInstance) {
       where: {
         email,
       },
+      include: {
+        role: true,
+      },
     })
+
+    console.log(user)
 
     if (!user) {
       return reply.status(400).send({
@@ -96,13 +101,18 @@ export async function authRoutes(app: FastifyInstance) {
     })
 
     if (correctPassword) {
-      const { password, salt, ...rest } = user
-      const accessToken = app.jwt.sign(rest, { expiresIn: '7d' })
+      const { password, salt, role, ...rest } = user
+      const accessTokenPayload = {
+        ...rest,
+        role: user.role.name,
+      }
+      const accessToken = app.jwt.sign(accessTokenPayload, { expiresIn: '7d' })
 
       return reply.status(200).send({
         user: {
           name: user.name,
           email: user.email,
+          role: user.role.name,
         },
         accessToken,
       })
